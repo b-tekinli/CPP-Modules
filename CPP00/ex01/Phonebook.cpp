@@ -29,13 +29,13 @@ bool PhoneBook::addContact(const Contact &contact)
 
 void PhoneBook::searchContacts() const
 {
-    std::cout << std::setw(10) << "Index"
+    std::cout << std::setw(20) << "Index"
               << "|"
-              << std::setw(10) << "First Name"
+              << std::setw(20) << "First Name"
               << "|"
-              << std::setw(10) << "Last Name"
+              << std::setw(20) << "Last Name"
               << "|"
-              << std::setw(10) << "Nickname"
+              << std::setw(20) << "Nickname"
               << "|" << std::endl;
     std::cout << std::setfill('-') << std::setw(73) << "-" << std::endl;
     std::cout << std::setfill(' ');
