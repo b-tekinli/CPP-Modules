@@ -54,10 +54,12 @@ void PhoneBook::searchContacts() const
     }
 }
 
-int PhoneBook::getSize() const {
+int PhoneBook::getSize() const
+{
     return numContacts;
 }
 
-Contact PhoneBook::getContact(int index) const {
+Contact PhoneBook::getContact(int index) const
+{
     return contacts[index];
 }
