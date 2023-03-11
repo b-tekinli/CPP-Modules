@@ -34,7 +34,6 @@ public:
     void setPhoneNumber(const std::string &phoneNumber);
     void setDarkSecret(const std::string &darkSecret);
 
-    bool isEmpty() const;
     void printFullInfo() const;
 };
 
