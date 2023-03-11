@@ -31,11 +31,11 @@ void PhoneBook::searchContacts() const
 {
     std::cout << std::setw(10) << "Index"
               << "|"
-              << std::setw(20) << "First Name"
+              << std::setw(10) << "First Name"
               << "|"
-              << std::setw(20) << "Last Name"
+              << std::setw(10) << "Last Name"
               << "|"
-              << std::setw(20) << "Phone Number"
+              << std::setw(10) << "Nickname"
               << "|" << std::endl;
     std::cout << std::setfill('-') << std::setw(73) << "-" << std::endl;
     std::cout << std::setfill(' ');
@@ -45,7 +45,7 @@ void PhoneBook::searchContacts() const
         std::cout << std::setw(10) << i << "|"
                   << std::setw(20) << contacts[i].getFirstName() << "|"
                   << std::setw(20) << contacts[i].getLastName() << "|"
-                  << std::setw(20) << contacts[i].getPhoneNumber() << "|" << std::endl;
+                  << std::setw(20) << contacts[i].getNickname() << "|" << std::endl;
     }
 
     if (numContacts == 0)
