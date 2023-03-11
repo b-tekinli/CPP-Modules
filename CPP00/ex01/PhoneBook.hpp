@@ -2,20 +2,23 @@
 #define PHONEBOOK_HPP
 
 #include "Contact.hpp"
-using std::cout;
 
-class PhoneBook {
-    private:
-        Contact contacts[8];
-        static int count;
-        int index;
-    
-    public:
-        PhoneBook() { }
-        ~PhoneBook() { }
-        Contact getContact(int index) const { };
-        void setContact( Contact contact ) { }; 
-        int getCount() const; 
+class PhoneBook
+{
+public:
+    PhoneBook();
+    ~PhoneBook();
+
+    bool addContact(const Contact &contact);
+    void searchContacts() const;
+    int getSize() const;
+    Contact getContact(int index) const;
+
+private:
+    static const int max_capacity = 8;
+
+    Contact contacts[max_capacity];
+    int numContacts;
 };
 
 #endif
