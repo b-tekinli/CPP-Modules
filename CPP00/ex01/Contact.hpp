@@ -1,33 +1,41 @@
-#ifndef Contact_HPP
-#define Contact_HPP
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <string>
-using std::cout;
+#include <iostream>
 
-class Contact {
-    private:
-        string name;
-        string surname;
-        string nickname;
-        string phonenumber;
-        string secret;
-        
-    public:
-        Contact() { }
+class Contact
+{
+private:
+    std::string firstName;
+    std::string lastName;
+    std::string nickname;
+    std::string phoneNumber;
+    std::string darkSecret;
 
-        ~Contact() { }
+public:
+    Contact();
 
-        string getName() const { };
-        string getSurname() const { };
-        string getNickname() const { };
-        string getPhonenumber() const { };
-        string getSecret() const { };
+    Contact(const std::string &firstName, const std::string &lastName,
+            const std::string &nickname, const std::string &phoneNumber,
+            const std::string &darkSecret);
 
-        void setName( string _name ) { };
-        void setSurname( string _surname ) { };
-        void setNickname( string _nickname ) { };
-        void setPhonenumber( string _phonenumber ) { };
-        void setSecret( string _secret ) { };
+    ~Contact();
+
+    std::string getFirstName() const;
+    std::string getLastName() const;
+    std::string getNickname() const;
+    std::string getPhoneNumber() const;
+    std::string getDarkSecret() const;
+
+    void setFirstName(const std::string &firstName);
+    void setLastName(const std::string &lastName);
+    void setNickname(const std::string &nickname);
+    void setPhoneNumber(const std::string &phoneNumber);
+    void setDarkSecret(const std::string &darkSecret);
+
+    bool isEmpty() const;
+    void printFullInfo() const;
 };
 
 #endif
