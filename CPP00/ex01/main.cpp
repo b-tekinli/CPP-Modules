@@ -14,7 +14,7 @@ int main()
     {
         if (command == "ADD")
         {
-            std::string firstName, lastName, nickname, phoneNumber, secret;
+            std::string firstName, lastName, nickname, phoneNumber, darkSecret;
             std::cout << "Enter first name: ";
             std::getline(std::cin, firstName);
             std::cout << "Enter last name: ";
@@ -23,9 +23,10 @@ int main()
             std::getline(std::cin, nickname);
             std::cout << "Enter phone number: ";
             std::getline(std::cin, phoneNumber);
-            std::cout << "Enter dark secret: ";
-            std::getline(std::cin, secret);
-            Contact contact(firstName, lastName, nickname, phoneNumber, secret);
+            std::cout << "Enter darkest secret: ";
+            std::getline(std::cin, darkSecret);
+
+            Contact contact(firstName, lastName, nickname, phoneNumber, darkSecret);
             phonebook.addContact(contact);
             std::cout << "Contact added to phone book.\n";
         }
@@ -33,9 +34,10 @@ int main()
         {
             phonebook.searchContacts();
             std::cout << "Enter index of contact to view: ";
+
             int index;
             std::cin >> index;
-            
+
             if (index < 0 || index > phonebook.getSize())
             {
                 std::cout << "Invalid index.\n";
@@ -48,7 +50,7 @@ int main()
         else if (command == "EXIT")
         {
             std::cout << "Goodbye!\n";
-            return 0;
+            return (0);
         }
         else
         {
