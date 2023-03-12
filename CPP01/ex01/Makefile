@@ -1,6 +1,6 @@
 NAME = myzombies
 
-SRCS = Zombie.cpp main.cpp ZombieHorde.cpp
+SRCS = Zombie.cpp main.cpp zombieHorde.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
