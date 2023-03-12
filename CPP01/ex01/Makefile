@@ -20,3 +20,7 @@ clean :
 	rm -rf $(OBJS)
 
 .PHONY : all re fclean clean
+
+# leak olustugunu kontrol etmek icin
+# valgrind : $(NAME)
+#	valgrind --leak-check=full ./$(NAME)
