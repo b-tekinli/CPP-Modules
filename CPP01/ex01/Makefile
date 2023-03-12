@@ -21,6 +21,6 @@ clean :
 
 .PHONY : all re fclean clean
 
-# leak olustugunu kontrol etmek icin
+# leak ctrl
 # valgrind : $(NAME)
 #	valgrind --leak-check=full ./$(NAME)
