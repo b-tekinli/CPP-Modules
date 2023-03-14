@@ -1,5 +1,4 @@
 #include "Zombie.hpp"
-#include <iostream>
 
 extern Zombie *zombieHorde(int N, std::string name);
 
