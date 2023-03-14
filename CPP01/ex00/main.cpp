@@ -2,15 +2,15 @@
 
 int main()
 {
-    Zombie zombieA = Zombie("Zombie A");
-    zombieA.announce();
+    Zombie zombie1 = Zombie("Darly");
+    zombie1.announce();
 
-    Zombie *zombieB = newZombie("Zombie B");
-    zombieB->announce();
+    Zombie *zombie2 = newZombie("Rick");
+    zombie2->announce();
 
-    randomChump("Zombie Y");
+    randomChump("Negan");
 
-    delete zombieB;
+    delete zombie2;
     
     return (0);
 }
