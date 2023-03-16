@@ -96,6 +96,8 @@ int main()
 
 Yukarıdaki örnekte, kullanıcıdan alınan değer ile dinamik olarak bellek alanı tahsis edilir ve bu bellek alanı programın çalışması sırasında kullanılır. Dinamik tahsis yöntemi, programın bellek ihtiyacının program çalışma zamanında belirlenebilmesi sayesinde esneklik sağlar.
 
+---
+
 ## C++ dilinde bir sınıf üyesine pointer ataması nasıl yapılır?
 
 Cpp'de, bir sınıfın üyesi olarak tanımlanan bir veri elemanına, işaretçi veya referans kullanarak erişilebilir. Bu, veri elemanının bellek adresine doğrudan erişmek yerine, sınıfın bir örneği üzerinden erişim sağlar ve nesne yönelimli programlama konseptlerine uygun bir yaklaşımdır.
@@ -127,6 +129,8 @@ public:
 Bu kod örneğinde, "myInt" adlı bir referans, "MyClass" adlı bir sınıfın üyesi olarak tanımlanır. Bu referans, sınıfın örneği üzerinden erişilebilir ve ilgili bellek adresine doğrudan erişim sağlayabilir.
 
 Üye işaretçileri veya referanslarının kullanımı, programlama sırasında bellek yönetimine daha fazla esneklik sağlar. Ancak, doğru bir şekilde kullanılmadığında, bellek sızıntılarına veya geçersiz bellek erişimlerine yol açabilir. Bu nedenle, üye işaretçileri veya referanslarının kullanımı, programcının dikkatli bir şekilde ve ihtiyatlı bir şekilde ele alması gereken bir konudur.
+
+---
 
 ## C++ dilinde, switch ifadesi nedir?
 
@@ -210,3 +214,27 @@ int main() {
 ```
 
 Bu kod örneğinde, kullanıcının girdiği sayıya göre farklı bir ayın adı yazdırılır. "switch" ifadesi, "ay" adlı bir değişkenin değerine göre farklı kod bloklarının çalıştırılmasını sağlar. "case" ifadesi, farklı sayılar için çalışacak kod bloklarını belirtir. "default" ifadesi, hiçbir "case" ifadesiyle eşleşmeyen durumlar için bir kod bloğu belirtir.
+
+---
+
+## C++ dilinde, ifstream nedir?
+
+ifstream, bir dosyanın verilerine erişmek ve onları okumak için kullanılan bir sınıftır. ifstream sınıfının open() metodu çağırılarak dosya okuma işlemi yapılabilir. Okuma işlemi tamamlandıktan sonra close() metodunu çağırmak dosya bağlantısını kapatır.
+
+Örneğin, aşağıdaki kod parçası, example.txt adlı bir dosyayı okuyarak, dosyadaki tüm satırları ekrana yazdıracaktır:
+
+```cpp
+#include <iostream>
+#include <fstream>
+
+int main() {
+    std::ifstream file("example.txt");
+    std::string line;
+    while (std::getline(file, line)) {
+        std::cout << line << '\n';
+    }
+    file.close();
+    return 0;
+}
+```
+Yukarıdaki kodda ifstream sınıfı, file adlı bir nesne oluşturmak için kullanılmıştır. Daha sonra, getline() metodu, dosyadan bir satır okur ve bu satırı line adlı bir string değişkenine atar. Bu işlem, dosyadaki tüm satırlar okunana kadar devam eder. En sonunda, close() metodu, dosya bağlantısını kapatır.
