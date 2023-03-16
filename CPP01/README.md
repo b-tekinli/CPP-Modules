@@ -240,3 +240,31 @@ int main() {
 Yukarıdaki kodda ifstream sınıfı, file adlı bir nesne oluşturmak için kullanılmıştır. Daha sonra, getline() metodu, dosyadan bir satır okur ve bu satırı line adlı bir string değişkenine atar. Bu işlem, dosyadaki tüm satırlar okunana kadar devam eder. En sonunda, close() metodu, dosya bağlantısını kapatır.
 
 ofstream ise dosyaları yazmak için kullanılan bir sınıftır. ofstream sınıfı, fstream sınıfından türetilir ve dosyaya veri yazmak için özel olarak tasarlanmıştır. Dosyayı açmak ve belirli bir dosya modunu ayarlamak için kullanılan dosya işlemi nesnesi oluşturulduktan sonra, ofstream sınıfının << operatörü veya write() fonksiyonu kullanılarak dosyaya veri yazılabilir. Dosya işlemi tamamlandığında, dosya işlem nesnesi kapatılmalıdır.
+
+---
+
+### C++ dilinde npos nedir nasıl kullanılır?
+
+std::string::npos bir sabittir ve std::string::find işlevi tarafından kullanılır. Bu sabit, bir dize içinde başka bir alt dize ararken kullanılır. Eğer aranan alt dize bulunursa, alt dizenin pozisyonunu döndürür. Ancak alt dize bulunamazsa, std::string::npos değeri döndürülür.
+
+Örneğin aşağıdaki kodda, bir cümle içinde belirli bir kelime aranmaktadır. Eğer kelime bulunursa, kelimenin başlangıç pozisyonu yazdırılır. Eğer kelime bulunamazsa, "Kelime bulunamadı" mesajı yazdırılır.
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string sentence = "Bu bir örnek cümledir.";
+    std::string word = "örnek";
+    size_t position = sentence.find(word);
+    if (position != std::string::npos) {
+        std::cout << "Kelime " << position << " pozisyonunda bulundu." << std::endl;
+    }
+    else {
+        std::cout << "Kelime bulunamadı." << std::endl;
+    }
+    return (0);
+}
+```
+
+Bu örnekte, std::string::npos değeri kullanılarak std::string::find işlevinin kelimenin konumunu bulamadığı durumları kontrol edilir.
