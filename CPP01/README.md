@@ -217,7 +217,7 @@ Bu kod örneğinde, kullanıcının girdiği sayıya göre farklı bir ayın ad�
 
 ---
 
-## C++ dilinde, ifstream nedir?
+## C++ dilinde, ifstream ve ofstream nedir?
 
 ifstream, bir dosyanın verilerine erişmek ve onları okumak için kullanılan bir sınıftır. ifstream sınıfının open() metodu çağırılarak dosya okuma işlemi yapılabilir. Okuma işlemi tamamlandıktan sonra close() metodunu çağırmak dosya bağlantısını kapatır.
 
@@ -238,3 +238,5 @@ int main() {
 }
 ```
 Yukarıdaki kodda ifstream sınıfı, file adlı bir nesne oluşturmak için kullanılmıştır. Daha sonra, getline() metodu, dosyadan bir satır okur ve bu satırı line adlı bir string değişkenine atar. Bu işlem, dosyadaki tüm satırlar okunana kadar devam eder. En sonunda, close() metodu, dosya bağlantısını kapatır.
+
+ofstream ise dosyaları yazmak için kullanılan bir sınıftır. ofstream sınıfı, fstream sınıfından türetilir ve dosyaya veri yazmak için özel olarak tasarlanmıştır. Dosyayı açmak ve belirli bir dosya modunu ayarlamak için kullanılan dosya işlemi nesnesi oluşturulduktan sonra, ofstream sınıfının << operatörü veya write() fonksiyonu kullanılarak dosyaya veri yazılabilir. Dosya işlemi tamamlandığında, dosya işlem nesnesi kapatılmalıdır.
