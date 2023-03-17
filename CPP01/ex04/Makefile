@@ -9,7 +9,7 @@ CFLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	c++ $(CFLAGS) $(SRCS) -o $(NAME) -std=c++14
+	c++ $(CFLAGS) $(SRCS) -o $(NAME) -std=c++98
 
 re : fclean all
 
