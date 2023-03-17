@@ -10,7 +10,7 @@ SRC = Harl.cpp main.cpp
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	c++ $(CFLAG) $(SRC) -o $(NAME) -std=c++14
+	c++ $(CFLAG) $(SRC) -o $(NAME) -std=c++98
 
 clean:
 	rm -rf $(OBJ)
