@@ -4,16 +4,21 @@
 #include <string>
 #include <iostream>
 
+using std::cout;
+using std::cin;
+using std::string;
+using std::endl;
+
 class Weapon
 {
 private:
-    std::string type;
+    string type;
 
 public:
     Weapon();
-    Weapon(const std::string &type);
-    const std::string &getType() const;
-    void setType(const std::string &type);
+    Weapon(const string &type);
+    const string &getType() const;
+    void setType(const string &type);
 };
 
 #endif
