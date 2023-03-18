@@ -4,16 +4,16 @@ int main()
 {
     Harl harl;
 
-    std::cout << "Debug: ";
+    cout << "Debug: ";
     harl.complain("DEBUG");
 
-    std::cout << "Warning: ";
+    cout << "Warning: ";
     harl.complain("WARNING");
 
-    std::cout << "Info: ";
+    cout << "Info: ";
     harl.complain("INFO");
 
-    std::cout << "Error: ";
+    cout << "Error: ";
     harl.complain("ERROR");
 
     return (0);
