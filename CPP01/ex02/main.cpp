@@ -1,22 +1,28 @@
 #include <iostream>
 #include <string>
 
+#include <iostream>
+
+using std::cout;
+using std::endl;
+using std::string;
+
 int main() 
 {
 
-    std::string str = "HI THIS IS BRAIN";
-    std::string *stringPTR = &str;
-    std::string &stringREF = str;
+    string str = "HI THIS IS BRAIN";
+    string *stringPTR = &str;
+    string &stringREF = str;
 
 
-    std::cout << "String'in bellek adresi: " << &str << std::endl;
-    std::cout << "stringPTR'nin tuttugu bellek adresi: " << stringPTR << std::endl;
-    std::cout << "stringREF'nin tuttugu bellek adresi: " << &stringREF << std::endl;
+    cout << "String'in bellek adresi: " << &str << endl;
+    cout << "stringPTR'nin tuttugu bellek adresi: " << stringPTR << endl;
+    cout << "stringREF'nin tuttugu bellek adresi: " << &stringREF << endl;
 
 
-    std::cout << "String degişkeninin degeri: " << str << std::endl;
-    std::cout << "stringPTR tarafindan isaret edilen deger: " << *stringPTR << std::endl;
-    std::cout << "stringREF tarafindan isaret edilen deger: " << stringREF << std::endl;
+    cout << "String degişkeninin degeri: " << str << endl;
+    cout << "stringPTR tarafindan isaret edilen deger: " << *stringPTR << endl;
+    cout << "stringREF tarafindan isaret edilen deger: " << stringREF << endl;
 
     return (0);
 }
