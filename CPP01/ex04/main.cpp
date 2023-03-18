@@ -1,18 +1,25 @@
 #include <iostream>
 #include <fstream>
 
+using std::cout;
+using std::endl;
+using std::ifstream;
+using std::ios;
+using std::ofstream;
+using std::string;
+
 int main(int argc, char *argv[])
 {
     if (argc != 4)
     {
-        std::cout << "Usage: ./replace [fileName] [search] [replace]" << std::endl;
+        cout << "Usage: ./replace [fileName] [search] [replace]" << endl;
         return (1);
     }
 
-    std::string fileName = argv[1];
-    std::string search_word = argv[2];
-    std::string replace_word = argv[3];
-    std::string singleLine;
+    string fileName = argv[1];
+    string search_word = argv[2];
+    string replace_word = argv[3];
+    string singleLine;
 
     size_t position = 0;
     int searchLength = search_word.length();
@@ -20,33 +27,33 @@ int main(int argc, char *argv[])
 
     if (fileName.empty() || search_word.empty() || replace_word.empty())
     {
-        std::cout << "Arguments cannot be empty!" << std::endl;
+        cout << "Arguments cannot be empty!" << endl;
         return (1);
     }
 
-    std::ifstream readFile(fileName);
+    ifstream readFile(fileName);
     if (!readFile.is_open())
     {
-        std::cout << "File cannot be opened!" << std::endl;
+        std::cout << "File cannot be opened!" << endl;
         return (2);
     }
 
-    std::ofstream writeFile((fileName + ".replace"), std::ios::trunc);
+    ofstream writeFile((fileName + ".replace"), ios::trunc);
     if (!writeFile.is_open())
     {
-        std::cout << "File cannot be opened!" << std::endl;
+        cout << "File cannot be opened!" << endl;
         return (3);
     }
 
-    while (std::getline(readFile, singleLine))
+    while (getline(readFile, singleLine))
     {
-        while ((position = singleLine.find(search_word, position)) != std::string::npos)
+        while ((position = singleLine.find(search_word, position)) != string::npos)
         {
             singleLine.erase(position, searchLength);
             singleLine.insert(position, replace_word);
             position += replaceLength;
         }
-        writeFile << singleLine << std::endl;
+        writeFile << singleLine << endl;
         position = 0;
     }
 
