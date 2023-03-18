@@ -1,8 +1,5 @@
 #include "PhoneBook.hpp"
 
-#include <iostream>
-#include <iomanip>
-
 PhoneBook::PhoneBook() : numContacts(0) {}
 
 PhoneBook::~PhoneBook() {}
@@ -29,28 +26,28 @@ bool PhoneBook::addContact(const Contact &contact)
 
 void PhoneBook::searchContacts() const
 {
-    std::cout << std::setw(15) << "Index"
+    cout << setw(15) << "Index"
               << "|"
-              << std::setw(15) << "First Name"
+              << setw(15) << "First Name"
               << "|"
-              << std::setw(15) << "Last Name"
+              << setw(15) << "Last Name"
               << "|"
-              << std::setw(15) << "Nickname"
-              << "|" << std::endl;
-    std::cout << std::setfill('-') << std::setw(65) << "-" << std::endl;
-    std::cout << std::setfill(' ');
+              << setw(15) << "Nickname"
+              << "|" << endl;
+    cout << setfill('-') << setw(65) << "-" << endl;
+    cout << setfill(' ');
 
     for (int i = 0; i < numContacts; i++)
     {
-        std::cout << std::setw(15) << i << "|"
-                  << std::setw(15) << contacts[i].getFirstName() << "|"
-                  << std::setw(15) << contacts[i].getLastName() << "|"
-                  << std::setw(15) << contacts[i].getNickname() << "|" << std::endl;
+        cout << setw(15) << i << "|"
+                  << setw(15) << contacts[i].getFirstName() << "|"
+                  << setw(15) << contacts[i].getLastName() << "|"
+                  << setw(15) << contacts[i].getNickname() << "|" << endl;
     }
 
     if (numContacts == 0)
     {
-        std::cout << "The phonebook is empty." << std::endl;
+        cout << "The phonebook is empty." << endl;
     }
 }
 
