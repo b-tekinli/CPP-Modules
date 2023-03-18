@@ -4,6 +4,10 @@
 #include "string"
 #include "iostream"
 
+using std::string;
+using std::cout;
+using std::endl;
+
 class Harl
 {
 private:
@@ -13,7 +17,7 @@ private:
     void error(void);
 
 public:
-    void complain(std::string level);
+    void complain(string level);
 };
 
 #endif
