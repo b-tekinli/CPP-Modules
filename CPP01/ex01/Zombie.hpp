@@ -4,10 +4,14 @@
 #include <string>
 #include <iostream>
 
+using std::cout;
+using std::endl;
+using std::string;
+
 class Zombie
 {
 private:
-    std::string name;
+    string name;
 
 public:
     Zombie();
@@ -16,6 +20,6 @@ public:
     void announce();
 };
 
-Zombie *zombieHorde(int N, std::string name);
+Zombie *zombieHorde(int N, string name);
 
 #endif
