@@ -8,7 +8,7 @@ int main(int ac, char **av)
     {
         int i = 0;
 
-        std::string levels[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+        string levels[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
 
         while (i < 4 && av[1] != levels[i])
             i++;
@@ -16,23 +16,23 @@ int main(int ac, char **av)
         switch (i)
         {
         case 0:
-            std::cout << "[" << levels[0] << "]" << std::endl;
+            cout << "[" << levels[0] << "]" << endl;
             harl.complain(levels[0]);
-            std::cout << std::endl;
+            cout << endl;
         case 1:
-            std::cout << "[" << levels[1] << "]" << std::endl;
+            cout << "[" << levels[1] << "]" << endl;
             harl.complain(levels[1]);
-            std::cout << std::endl;
+            cout << endl;
         case 2:
-            std::cout << "[" << levels[2] << "]" << std::endl;
+            std::cout << "[" << levels[2] << "]" << endl;
             harl.complain(levels[2]);
-            std::cout << std::endl;
+            cout << endl;
         case 3:
-            std::cout << "[" << levels[3] << "]" << std::endl;
+            cout << "[" << levels[3] << "]" << endl;
             harl.complain(levels[3]);
-            std::cout << std::endl;
+            cout << endl;
         default:
-            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+            cout << "[ Probably complaining about insignificant problems ]" << endl;
         }
     }
 
