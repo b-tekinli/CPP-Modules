@@ -17,6 +17,7 @@ public:
     Zombie();
     Zombie(string name);
     ~Zombie();
+    void setName(string name);
     void announce();
 };
 
