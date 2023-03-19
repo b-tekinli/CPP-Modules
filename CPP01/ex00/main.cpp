@@ -7,10 +7,20 @@ int main()
 
     Zombie *zombie2 = newZombie("Rick");
     zombie2->announce();
+    
+    delete zombie2;
 
     randomChump("Negan");
 
-    delete zombie2;
-    
+    randomChump("Carol");
+
+    Zombie zombie3 = Zombie("Rosita");
+    zombie3.announce();
+
+    Zombie zombie4 = Zombie("Glenn");
+    zombie4.announce();
+
+    randomChump("Maggie");
+
     return (0);
 }
