@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     ifstream readFile(fileName);
     if (!readFile.is_open())
     {
-        std::cout << "File cannot be opened!" << endl;
+        cout << "File cannot be opened!" << endl;
         return (2);
     }
 
