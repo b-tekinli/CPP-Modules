@@ -1,5 +1,5 @@
-#ifndef CPP_MODULE_HARL_H
-#define CPP_MODULE_HARL_H
+#ifndef HARL_H
+#define HARL_H
 
 #include "string"
 #include "iostream"
