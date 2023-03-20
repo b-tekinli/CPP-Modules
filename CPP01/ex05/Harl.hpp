@@ -1,8 +1,8 @@
 #ifndef HARL_H
 #define HARL_H
 
-#include "string"
-#include "iostream"
+#include <string>
+#include <iostream>
 
 using std::string;
 using std::cout;
