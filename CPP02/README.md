@@ -1,10 +1,10 @@
 # **CPP02**
 
-Geçici polimorfizm, operator overloadlar, fixed point numbers (noktalı sayılar), noktalı sayılar RAM’de nasıl tutulur, copy constructor, ortodoks Kanonik sınıf formu.
+Copy constructor, operator overloadlar, geçici polimorfizm, fixed point numbers (noktalı sayılar), noktalı sayılar RAM’de nasıl tutulur, ortodoks Kanonik sınıf formu.
 
 ## C++ dilinde copy constructor nedir?
 
-C++ dilinde, copy constructor (kopya yapıcı) bir sınıfın başka bir nesnesi ile aynı türde bir nesneyi oluşturmak için kullanılır. Bu işlem, bir nesnenin diğerine tam bir kopyasını oluşturmak için yapılır.
+C++ dilinde, copy constructor bir sınıfın başka bir nesnesi ile aynı türde bir nesneyi oluşturmak için kullanılır. Bu işlem, bir nesnenin diğerine tam bir kopyasını oluşturmak için yapılır.
 
 Copy constructor, bir nesnenin referansını alır ve yeni bir nesne oluşturmak için bu referanstaki nesnenin tüm verilerini kullanır. Bu, bir sınıfta tanımlanmış olan verilerin kopyalanması, dinamik olarak tahsis edilmiş bellek bloklarının kopyalanması ve diğer ilgili işlemlerin yapılması gibi adımları içerir.
 
