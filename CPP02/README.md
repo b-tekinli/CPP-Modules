@@ -49,6 +49,8 @@ int main() {
 }
 ```
 
+---
+
 ## C++ dilinde operator overload nedir?
 
 C++'ta operator overload, bir sınıfta tanımlanmış olan bir operatörün kullanımını değiştirmek veya genişletmek için kullanılan bir tekniktir. Bu teknik sayesinde, sınıfın nesneleri üzerinde operatörlerin daha özelleştirilmiş bir şekilde kullanılması mümkün hale gelir.
@@ -77,4 +79,47 @@ Aşırı yüklenmiş = operatörü, const anahtar sözcüğü ile geçirilen bir
 
 Bu örnekte, atama işlemi yapılırken bellek yönetimini kontrol etmek için bir özel işlem yapılmadığından, RAM kullanımı sınırlıdır.
 
+---
 
+## Geçici Polimorfizm nedir?
+
+Geçici polimorfizm, C++ gibi bir nesne yönelimli programlama dilinde, aynı arayüzü (saf sanal fonksiyonları) kullanan farklı sınıfların farklı davranışlar sergilemesidir. Bu, işlevin hangi sınıf tarafından çağrıldığına bağlı olarak değişen bir işlevsellik sağlar.
+
+Örneğin, hayvanlar üzerinde çalışan bir programda, Animal sınıfı, hayvanların genel özelliklerini tanımlayacak bir arayüz sağlayabilir. Ardından, Dog ve Cat sınıfları, Animal sınıfından türetilerek Animal sınıfının arayüzünü uygularlar ve kendi özgün davranışlarını eklerler.
+
+Aşağıdaki örnekte, Animal sınıfı, bir speak işlevi sağlar:
+
+```cpp
+class Animal {
+public:
+  virtual void speak() = 0;    // Saf sanal fonksiyon
+};
+
+class Dog : public Animal {
+public:
+  void speak() {
+    std::cout << "Hav hav!" << std::endl;
+  }
+};
+
+class Cat : public Animal {
+public:
+  void speak() {
+    std::cout << "Miyav!" << std::endl;
+  }
+};
+
+int main() {
+  Animal* animal;
+
+  animal = new Dog();
+  animal->speak();
+
+  animal = new Cat();
+  animal->speak();
+}
+```
+
+Bu örnekte, Animal sınıfı, saf sanal bir speak fonksiyonunu tanımlar. Dog ve Cat sınıfları, Animal sınıfından türetilir ve speak işlevini aşırı yükler.
+
+main işlevi, önce bir Dog nesnesi oluşturur ve sonra Animal sınıfının bir işaretçisi olarak saklar. Ardından, speak işlevini çağırarak, Dog sınıfının speak işlevini çağırır. Aynı şey, Cat nesnesi için de yapılır. Bu, Animal sınıfı tarafından sağlanan bir arayüzü kullanarak, farklı sınıfların farklı davranışlar sergilemesine örnek bir geçici polimorfizm örneğidir.
