@@ -38,7 +38,6 @@ Fixed &Fixed::operator=(const Fixed &other)
 
 int Fixed::getRawBits() const
 {
-    cout << "getRawBits member function called" << endl;
     return fixedValue;
 }
 
