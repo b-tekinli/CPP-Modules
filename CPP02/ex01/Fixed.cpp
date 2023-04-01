@@ -5,6 +5,12 @@ Fixed::Fixed() : fixedValue(0)
     cout << "Default constructor called" << endl;
 }
 
+Fixed::Fixed(const Fixed &other)
+{
+    cout << "Copy constructor called" << endl;
+    *this = other;
+}
+
 Fixed::Fixed(const int val)
 {
     cout << "Int constructor called" << endl;
@@ -15,12 +21,6 @@ Fixed::Fixed(const float val)
 {
     cout << "Float constructor called" << endl;
     fixedValue = roundf(val * (1 << fractionalBits));
-}
-
-Fixed::Fixed(const Fixed &other)
-{
-    cout << "Copy constructor called" << endl;
-    *this = other;
 }
 
 Fixed::~Fixed()
