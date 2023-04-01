@@ -15,9 +15,9 @@ private:
 
 public:
     Fixed(void);
+    Fixed(const Fixed &other);
     Fixed(const int val);
     Fixed(const float val);
-    Fixed(const Fixed &other);
     ~Fixed(void);
 
     Fixed &operator=(const Fixed &other);
