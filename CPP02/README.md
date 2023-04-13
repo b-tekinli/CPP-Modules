@@ -2,6 +2,12 @@
 
 Copy constructor, operator overloadlar, geçici polimorfizm, fixed point numbers (noktalı sayılar), noktalı sayılar RAM’de nasıl tutulur, ortodoks Kanonik sınıf formu.
 
+## Fixed Point Numbers
+
+'Fixed' adında sabit noktalı sayıları temsil eden bir sınıf oluşturulur. 'Fixed' sınıfı 32 bitlik tamsayıları kullanarak bir kesirli sayıyı tanımlar. Bu kesirli sayılar, bir tam sayı ve bir ondalık kısmın birleştirilmesiyle oluşur ve sabit bir noktalı sayı hassasiyetine sahiptir.
+
+---
+
 ## C++ dilinde copy constructor nedir?
 
 C++ dilinde, copy constructor bir sınıfın başka bir nesnesi ile aynı türde bir nesneyi oluşturmak için kullanılır. Bu işlem, bir nesnenin diğerine tam bir kopyasını oluşturmak için yapılır.
