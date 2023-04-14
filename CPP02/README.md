@@ -59,7 +59,7 @@ int main() {
 
 ## C++ dilinde operator overload nedir?
 
-C++'ta operator overload, bir sınıfta tanımlanmış olan bir operatörün kullanımını değiştirmek veya genişletmek için kullanılan bir tekniktir. Bu teknik sayesinde, sınıfın nesneleri üzerinde operatörlerin daha özelleştirilmiş bir şekilde kullanılması mümkün hale gelir.
+C++'ta operator overload, bir sınıfta tanımlanmış olan bir operatörün kullanımını değiştirmek veya genişletmek için kullanılan bir tekniktir. Bu teknik sayesinde,fixedValue sınıfın nesneleri üzerinde operatörlerin daha özelleştirilmiş bir şekilde kullanılması mümkün hale gelir.
 
 Örneğin, bir sınıfın nesneleri üzerinde '+' operatörünü kullanmak istediğimizde, bu operatörün sınıfın özelliklerine uygun bir şekilde çalışması gerekir. Eğer sınıfın nesneleri üzerinde bu operatörün varsayılan davranışı yeterli değilse, operator overload tekniği kullanılarak bu operatörün işlevselliği değiştirilebilir.
 
