@@ -4,7 +4,7 @@ Copy constructor, operator overloadlar, geçici polimorfizm, fixed point numbers
 
 ## Fixed Point Numbers
 
-'Fixed' adında sabit noktalı sayıları temsil eden bir sınıf oluşturulur. 'Fixed' sınıfı 32 bitlik tamsayıları kullanarak bir kesirli sayıyı tanımlar. Bu kesirli sayılar, bir tam sayı ve bir ondalık kısmın birleştirilmesiyle oluşur ve sabit bir noktalı sayı hassasiyetine sahiptir.
+'Fixed' adında sabit noktalı sayıları temsil eden bir sınıf oluşturulur. 'Fixed' sınıfı 32 bitlik tamsayıları kullanarak bir kesirli sayıyı tanımlar. Bu kesirli sayılar, bir tam sayı ve bir ondalık kısmın birleştirilmesiyle oluşur ve sabit bir noktalı sayı hassasiyetine sahiptir. `fractionalBits`, sabit bir değerdir ve sınıfın tüm örnekleri için aynı değere sahiptir.
 
 ---
 
