@@ -98,7 +98,7 @@ Aşağıdaki örnekte, Animal sınıfı, bir speak işlevi sağlar:
 ```cpp
 class Animal {
 public:
-  virtual void speak() = 0;    // Saf sanal fonksiyon
+  virtual void speak() = 0;    // pure sanal fonksiyon
 };
 
 class Dog : public Animal {
