@@ -31,6 +31,7 @@ Fixed::~Fixed()
 Fixed &Fixed::operator=(const Fixed &other)
 {
     cout << "Copy assignment operator called" << endl;
+    
     if (this != &other)
         fixedValue = other.getRawBits();
     return *this;
