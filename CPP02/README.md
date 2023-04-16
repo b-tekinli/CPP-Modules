@@ -140,16 +140,16 @@ Matematiksel işlemler yapmak için kullanılan bir kütüphanedir. Bu işlemler
 
 ---
 
-## C++ dilinde inkrement ve postfix nedir?
+## C++ dilinde increment, decrement, prefix ve postfix nedir?
 
-İnkrement (x++) ve postfix (++x) C++ programlama dilinde iki farklı inkrement operatörüdür. İnkrement operatörü, bir değişkenin değerini 1 arttırır ve sonrasında arttırılmış değeri döndürür. Örneğin:
+Increment prefix (x++) ve postfix (++x) C++ programlama dilinde iki farklı increment operatörüdür. Increment operatörü, bir değişkenin değerini 1 arttırır ve sonrasında arttırılmış değeri döndürür. Örneğin:
 
 ```cpp
 int x = 5;
 ++x;        // x'in değeri 6 olur
 ```
 
-Postfix inkrement operatörü de bir değişkenin değerini 1 arttırır, ancak operatörün uygulandığı değişkenin eski değerini döndürür. Örneğin:
+Postfix increment operatörü de bir değişkenin değerini 1 arttırır, ancak operatörün uygulandığı değişkenin eski değerini döndürür. Örneğin:
 
 ```cpp
 int x = 5;
@@ -157,3 +157,11 @@ int y = x++; // y = 5, x = 6
 ```
 
 Bu örnekte, x değişkeninin değeri 1 artırıldı ve sonrasında y değişkenine atanmadan önce eski değeri olan 5 döndürüldü.
+
+Decrement ise prefix ve postfix operatörlerini kullanarak azaltma işlemi yapar. Örneğin:
+
+```cpp
+Fixed a(5);
+--a;  // prefix decrement, a şimdi 4
+a--;  // postfix decrement, a şimdi 3
+```
