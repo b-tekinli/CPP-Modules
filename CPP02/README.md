@@ -138,3 +138,22 @@ Matematiksel işlemler yapmak için kullanılan bir kütüphanedir. Bu işlemler
 
 Örneğin, pow() fonksiyonu, bir sayının üssünü hesaplamak için kullanılır. sqrt() fonksiyonu, bir sayının karekökünü hesaplamak için kullanılır. sin(), cos() ve tan() fonksiyonları trigonometrik işlemler yapmak için kullanılır.
 
+---
+
+## C++ dilinde inkrement ve postfix nedir?
+
+İnkrement (x++) ve postfix (++x) C++ programlama dilinde iki farklı inkrement operatörüdür. İnkrement operatörü, bir değişkenin değerini 1 arttırır ve sonrasında arttırılmış değeri döndürür. Örneğin:
+
+```cpp
+int x = 5;
+++x;        // x'in değeri 6 olur
+```
+
+Postfix inkrement operatörü de bir değişkenin değerini 1 arttırır, ancak operatörün uygulandığı değişkenin eski değerini döndürür. Örneğin:
+
+```cpp
+int x = 5;
+int y = x++; // y = 5, x = 6
+```
+
+Bu örnekte, x değişkeninin değeri 1 artırıldı ve sonrasında y değişkenine atanmadan önce eski değeri olan 5 döndürüldü.
