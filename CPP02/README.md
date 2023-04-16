@@ -129,3 +129,12 @@ int main() {
 Bu örnekte, Animal sınıfı, saf sanal bir speak fonksiyonunu tanımlar. Dog ve Cat sınıfları, Animal sınıfından türetilir ve speak işlevini aşırı yükler.
 
 main işlevi, önce bir Dog nesnesi oluşturur ve sonra Animal sınıfının bir işaretçisi olarak saklar. Ardından, speak işlevini çağırarak, Dog sınıfının speak işlevini çağırır. Aynı şey, Cat nesnesi için de yapılır. Bu, Animal sınıfı tarafından sağlanan bir arayüzü kullanarak, farklı sınıfların farklı davranışlar sergilemesine örnek bir geçici polimorfizm örneğidir.
+
+---
+
+## C++ dilinde cmath kütüphanesi nedir ne işe yarar?
+
+Matematiksel işlemler yapmak için kullanılan bir kütüphanedir. Bu işlemler arasında trigonometrik işlevler, üs alma, kök alma, logaritma ve diğerleri yer alır.
+
+Örneğin, pow() fonksiyonu, bir sayının üssünü hesaplamak için kullanılır. sqrt() fonksiyonu, bir sayının karekökünü hesaplamak için kullanılır. sin(), cos() ve tan() fonksiyonları trigonometrik işlemler yapmak için kullanılır.
+
