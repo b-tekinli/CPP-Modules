@@ -165,3 +165,18 @@ Fixed a(5);
 --a;  // prefix decrement, a şimdi 4
 a--;  // postfix decrement, a şimdi 3
 ```
+
+---
+
+## << operatörü nasıl overload edilir?
+
+Bu << operatörü output işlemleri için kullanılır. Kod içerisindeki fonksiyonda `ostream` class'ından bir nesne türetilerek overload edilerek kullanıldı. Fonksiyonun ilk parametresi ostream, ikinci parametresi ise Fixed nesnesi alır. Fonksiyonun amacı, Fixed nesnesinin toFloat() fonksiyonunu kullanarak nesnenin ondalık sayı değerini hesaplar ve onu ostream nesnesine yazar.
+
+Bu işlevi overload ederek Fixed nesnelerini direkt olarak `cout` gibi output işlemlerine yazdırabiliriz. Örneğin:
+
+```cpp
+Fixed a(3.14f);
+cout << a << endl; // "3.14" yazdırır
+```
+
+Burada direkt olarak << operatörü overload edildi ve `a` nesnesine `cout` olarak yazdırdı.
