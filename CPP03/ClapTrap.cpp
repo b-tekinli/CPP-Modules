@@ -1,5 +1,14 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap()
+{
+    name = "Beyza";
+    hitPoints = 10;
+    energyPoints = 10;
+    attackDamage = 0;
+    cout << "Default ClapTrap is alive!" << endl;
+}
+
 ClapTrap::ClapTrap(string name) : name(name),
                                   hitPoints(10),
                                   energyPoints(10),
@@ -8,9 +17,29 @@ ClapTrap::ClapTrap(string name) : name(name),
     cout << "ClapTrap " << name << " is alive!" << endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name),
+                                             hitPoints(other.hitPoints),
+                                             energyPoints(other.energyPoints),
+                                             attackDamage(other.attackDamage)
+{
+    cout << "ClapTrap " << name << " is alive! (copy)" << endl;
+}
+
 ClapTrap::~ClapTrap()
 {
     cout << "ClapTrap " << name << " is dead!" << endl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &other)
+{
+    if (this != &other)
+    {
+        name = other.name;
+        hitPoints = other.hitPoints;
+        energyPoints = other.energyPoints;
+        attackDamage = other.attackDamage;
+    }
+    return *this;
 }
 
 void ClapTrap::attack(const string &target)
