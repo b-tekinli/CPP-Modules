@@ -36,10 +36,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
     if (this != &other)
     {
-        name = other.name;
-        energyPoints = other.energyPoints;
-        hitPoints = other.hitPoints;
-        attackDamage = other.attackDamage;
+        ClapTrap::operator=(other);
         cout << "ScavTrap copy assigment operator called." << endl;
     }
 
