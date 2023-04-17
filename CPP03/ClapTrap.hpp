@@ -16,8 +16,12 @@ private:
     int attackDamage;
 
 public:
+    ClapTrap();
     ClapTrap(string name);
+    ClapTrap(const ClapTrap& other);
     ~ClapTrap();
+
+    ClapTrap& operator=(const ClapTrap &other);
 
     void attack(const string &target);
     void takeDamage(unsigned int amount);
