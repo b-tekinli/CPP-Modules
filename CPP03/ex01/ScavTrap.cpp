@@ -49,7 +49,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 void ScavTrap::attack(const string &target)
 {
     if (energyPoints <= 0 || hitPoints <= 0)
-        cout << "Died" << endl;
+        cout << "Died." << endl;
     else
     {
         energyPoints--;
