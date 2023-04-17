@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap()
 {
-    name = "Beyza";
+    name = "Daryl";
     hitPoints = 10;
     energyPoints = 10;
     attackDamage = 0;
