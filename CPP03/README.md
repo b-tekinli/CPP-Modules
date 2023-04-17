@@ -53,3 +53,9 @@ int main() {
 }
 
 ```
+
+---
+
+## C++ dilinde protected kavramı nedir?
+
+C++'da bir sınıfın değişkenleri default olarak private olarak belirlenir. Private değişkenlere sadece sınıfın kendisi erişebilir, dışarıdan erişim engellenir. Ancak protected değişkenler, sınıfın kendisi ve bu sınıftan türetilmiş sınıflar (miras alan sınıflar) bu değişkenlere erişebilirler. Bu sayede ClapTrap sınıfından türetilen diğer sınıflar, örneğin ScavTrap sınıfı, bu protected değişkenlere erişebilir ve kullanabilirler. Bu nedenle, ClapTrap sınıfında bulunan değişkenlerin protected olarak belirlenmesi, miras alan ve alt sınıfların bu değişkenlere erişebilmesi için önemlidir.
