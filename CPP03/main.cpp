@@ -2,17 +2,19 @@
 
 int main()
 {
-    ClapTrap clapTrap("Bob");
-    ClapTrap otherClapTrap("Joe");
+    ClapTrap clapTrap;
+    ClapTrap otherClapTrap("Negan");
+    ClapTrap test(clapTrap);
 
     clapTrap.attack("enemy");
     otherClapTrap.takeDamage(5);
     clapTrap.beRepaired(2);
-    clapTrap.attack("enemy");
-    otherClapTrap.takeDamage(10);
-    clapTrap.attack("enemy");
-    clapTrap.beRepaired(5);
-    clapTrap.attack("enemy");
+
+    clapTrap.attack("zombie");
+	otherClapTrap.takeDamage(4);
+	test.beRepaired(10);
+    
+	clapTrap = otherClapTrap;
 
     return 0;
 }
