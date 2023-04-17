@@ -1,9 +1,9 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(string name) : name(name),
-                                       hitPoints(10),
-                                       energyPoints(10),
-                                       attackDamage(0)
+                                  hitPoints(10),
+                                  energyPoints(10),
+                                  attackDamage(0)
 {
     cout << "ClapTrap " << name << " is alive!" << endl;
 }
