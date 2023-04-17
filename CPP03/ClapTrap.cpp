@@ -22,7 +22,7 @@ ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name),
                                              energyPoints(other.energyPoints),
                                              attackDamage(other.attackDamage)
 {
-    cout << "ClapTrap " << name << " is alive! (copy)" << endl;
+    cout << "Copy ClapTrap " << name << " is alive!" << endl;
 }
 
 ClapTrap::~ClapTrap()
