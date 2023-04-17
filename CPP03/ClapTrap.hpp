@@ -3,9 +3,9 @@
 
 #include <iostream>
 #include <string>
-using std::string;
 using std::cout;
 using std::endl;
+using std::string;
 
 class ClapTrap
 {
@@ -18,7 +18,8 @@ private:
 public:
     ClapTrap(string name);
     ~ClapTrap();
-    void attack(const std::string &target);
+
+    void attack(const string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 };
