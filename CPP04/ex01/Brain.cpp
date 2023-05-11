@@ -16,7 +16,7 @@ Brain::~Brain()
 	cout << "Brain destroyed." << endl;
 }
 
-Brain&	Brain::operator=(const Brain &oth)
+Brain& Brain::operator=(const Brain &oth)
 {
 	int	i;
 
