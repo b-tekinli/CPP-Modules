@@ -17,7 +17,7 @@ Dog::~Dog()
 	cout << "Dog destroyed." << endl;
 }
 
-Dog	&Dog::operator=(const Dog &oth)
+Dog &Dog::operator=(const Dog &oth)
 {
 	type = oth.type;
 	cout << "Dog copy assigment operator called." << endl;

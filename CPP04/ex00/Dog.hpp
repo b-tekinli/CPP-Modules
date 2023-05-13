@@ -10,8 +10,8 @@ public:
 	Dog(const Dog &oth);
 	~Dog();
 
-	Dog	&operator=(const Dog &oth);
-	
+	Dog &operator=(const Dog &oth);
+
 	void makeSound() const;
 };
 

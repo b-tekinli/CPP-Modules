@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-using std::string;
 using std::cout;
 using std::endl;
+using std::string;
 
 class WrongAnimal
 {
@@ -17,7 +17,7 @@ public:
 	WrongAnimal(const WrongAnimal &oth);
 	~WrongAnimal();
 
-	WrongAnimal	&operator=(const WrongAnimal &oth);
+	WrongAnimal &operator=(const WrongAnimal &oth);
 
 	void makeSound() const;
 	string getType() const;

@@ -17,7 +17,7 @@ Cat::~Cat()
 	cout << "Cat destroyed." << endl;
 }
 
-Cat	&Cat::operator=(const Cat &oth)
+Cat &Cat::operator=(const Cat &oth)
 {
 	type = oth.type;
 	cout << "Cat copy assigment operator called." << endl;
