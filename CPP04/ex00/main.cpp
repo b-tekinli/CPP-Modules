@@ -11,8 +11,8 @@ int main()
 		const Animal *j = new Dog();
 		const Animal *i = new Cat();
 
-		cout << j->getType() << " " << endl;
-		cout << i->getType() << " " << endl;
+		cout << j->getType() << endl;
+		cout << i->getType() << endl;
 
 		i->makeSound();
 		j->makeSound();
@@ -29,7 +29,7 @@ int main()
 		const WrongAnimal *meta = new WrongAnimal();
 		const WrongAnimal *i = new WrongCat();
 
-		cout << i->getType() << " " << endl;
+		cout << i->getType() << endl;
 		i->makeSound();
 		meta->makeSound();
 
