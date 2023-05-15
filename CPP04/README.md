@@ -12,7 +12,7 @@ Sanal fonksiyonlar, bir üst sınıf tarafından tanımlandıklarında ve alt s�
 
 Ayrıca, sanal fonksiyonlar sayesinde bir üst sınıf türündeki bir nesnenin alt sınıf türündeki bir nesneye dönüştürülmesi işlemi, dinamik bir şekilde yapılır. Bu, alt sınıf türündeki nesnenin türüne göre ilgili alt sınıf fonksiyonlarının çağrılmasını sağlar.
 
-
+Örnek;
 ```cpp
 #include <iostream>
 
@@ -63,6 +63,8 @@ Yukarıda aynı fonksiyon olan makeSound() her sınıfta farklı şekilde tanım
 Soyut sınıflar (abstract class) belirli fonksiyonları veya değişkenleri olan ancak doğrudan nesne oluşturulamayan sınıflardır. Soyut sınıflar, en az bir saf sanal fonksiyon içerirler. Saf sanal fonksiyonlar, sınıfın bir tür arayüzü olarak kullanılmasına izin verir ve bu fonksiyonlar soyut sınıfın alt sınıfları tarafından implement edilmelidir.
 
 Örneğin, bir hayvan sınıfını soyut sınıf olarak ele alabiliriz. Hayvanların özelliklerini temsil eden bir sınıf tanımlayabilir ve bu sınıfın alt sınıfları olarak örnek olarak kedi, köpek, kuş, gibi hayvanları tanımlayabiliriz.
+
+Örnek;
 
 ```cpp
 class Hayvan
