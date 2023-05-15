@@ -16,11 +16,10 @@ Brain::~Brain()
 	cout << "Brain destroyed." << endl;
 }
 
-Brain& Brain::operator=(const Brain &oth)
+Brain &Brain::operator=(const Brain &oth)
 {
-	int	i;
-
-	i = -1;
+	int	i = -1;
+	
 	while (++i < 100)
 		this->ideas[i] = oth.ideas[i];
 
