@@ -100,6 +100,9 @@ int main()
 
 ```
 
+Yukarıda hayvan class'ının abstract class olup olmadığını virtual fonksiyonların sıfıra eşitlenmesinden dolayı anlayabiliriz. Hayvan class'ından direkt olarak bir nesne türetemeyiz ama onu inherit alan kedi class'ından bir nesne türetebiliriz.
+
+
 
 
 ---
