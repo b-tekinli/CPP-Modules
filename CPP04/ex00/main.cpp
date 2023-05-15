@@ -23,7 +23,7 @@ int main()
 		delete i;
 	}
 
-	cout << "\n\n" << endl;
+	cout << "\n" << endl;
 
 	{
 		const WrongAnimal *meta = new WrongAnimal();
