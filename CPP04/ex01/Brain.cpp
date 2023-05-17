@@ -25,5 +25,5 @@ Brain &Brain::operator=(const Brain &oth)
 
 	cout << "Brain copy assigment operator called." << endl;
 
-	return *this;
+	return (*this);
 }
