@@ -17,12 +17,10 @@ WrongCat::~WrongCat()
 	cout << "WrongCat destroyed." << endl;
 }
 
-WrongCat &WrongCat::operator=(const WrongCat &oth)
+void WrongCat::operator=(const WrongCat &oth)
 {
 	type = oth.type;
 	cout << "WrongCat copy assigment operator called." << endl;
-
-	return (*this);
 }
 
 void WrongCat::makeSound() const
