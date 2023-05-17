@@ -19,7 +19,7 @@ Cat::~Cat()
 	delete brain;
 }
 
-Cat	&Cat::operator=(const Cat &oth)
+Cat &Cat::operator=(const Cat &oth)
 {
 	type = oth.type;
 	*this->brain = *oth.brain;

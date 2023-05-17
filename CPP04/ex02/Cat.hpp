@@ -14,8 +14,8 @@ public:
 	Cat(const Cat &oth);
 	~Cat();
 
-	Cat	&operator=(const Cat &oth);
-	
+	Cat &operator=(const Cat &oth);
+
 	virtual void makeSound() const;
 	Brain *getBrain() const;
 };
