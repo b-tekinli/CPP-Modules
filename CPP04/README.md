@@ -56,6 +56,7 @@ int main() {
 
 Yukarıda aynı fonksiyon olan makeSound() her sınıfta farklı şekilde tanımlandığı için yani override edildiği için her seferinde farklı çıktı verdi.
 
+
 ---
 
 ## Abstract class nedir?
@@ -103,7 +104,80 @@ int main()
 Yukarıda hayvan class'ının abstract class olup olmadığını virtual fonksiyonların sıfıra eşitlenmesinden dolayı anlayabiliriz. Hayvan class'ından direkt olarak bir nesne türetemeyiz ama onu inherit alan kedi class'ından bir nesne türetebiliriz.
 
 
-
-
 ---
+
+## Shallow Copy ve Deep Copy nedir?
+
+Shallow copy (yüzeysel kopya) ve deep copy (derin kopya), nesnelerin kopyalanması sürecinde kullanılan iki farklı yöntemdir. İkisi arasındaki temel fark, kopyalanan nesnenin verilerine ve mevcut nesneye olan ilişkisine bağlıdır.
+
+Shallow copy, mevcut nesnenin bellek alanının bir kopyasını oluştururken, referans türündeki verileri doğrudan kopyalar. Yani, mevcut ve kopya nesne aynı verilere işaret ederler. Bu durumda, eğer mevcut nesne yok edilirse veya değiştirilirse, kopya nesne de etkilenir.
+
+Deep copy ise mevcut nesnenin tamamen bağımsız bir kopyasını oluşturur. Bellek alanı ve verilerin kopyası ayrı ayrı oluşturulur. Mevcut ve kopya nesneler birbirinden bağımsızdır ve herhangi bir değişiklik birbirini etkilemez.
+
+Her 2 kopya yöntemine de günlük hayat üzerinden bakalım;
+
+- Shallow Copy:
+
+    Bir arkadaşınızın gardırobunda bulunan bir elbiseyi ödünç almak istiyorsunuz. Arkadaşınız size elbiseyi verirken elbisenin bir kopyasını değil kendisine ait olan elbiseyi verir. Siz de bu elbiseyi kullanmaya başladığınızda yapacağınız değişiklikler arkadaşınızın elbisesini de etkiler. Mesela rengini değiştirdiyseniz arkadaşınıza elbiseyi geri verdiğinizde rengi değişmiş olarak vereceksiniz. Yani, elbiseyi kullandığınızda yapacağınız değişiklikler arkadaşınızın elbisesini de etkiler.
+
+- Deep Copy:
+
+    Bu sefer arkadaşınız size elbisenin bir kopyasını verir. Bu kopya elbise aynı model, renk ve boyuta sahip olabilir ancak farklı bir elbise yani kopyasıdır. Siz bu kopya elbiseyi kullanırken arkadaşınızın orijinal elbisesi etkilenmez ve sizin yaptığınız değişiklikler sadece kopya elbiseyi etkiler.
+
+
+Kod örneğiyle de anlatmak gerekirse:
+
+```cpp
+#include <iostream>
+#include <string>
+
+class Elbise {
+
+private:
+    string renk;
+
+public:
+    Elbise(const string &renk) : renk(renk) {}
+
+    string getRenk() const {
+        return renk;
+    }
+
+    void setRenk(const string &yeniRenk) {
+        renk = yeniRenk;
+    }
+};
+
+int main() {
+int main() {
+    // Shallow Copy
+    Elbise elbise1("Mavi");
+    Elbise elbise2 = elbise1;
+
+    cout << "Elbise 1 Rengi: " << elbise1.getRenk() << endl; // Mavi
+    cout << "Elbise 2 Rengi: " << elbise2.getRenk() << endl; // Mavi
+
+    elbise2.setRenk("Sarı");
+
+    cout << "Elbise 1 Rengi: " << elbise1.getRenk() << endl; // Sarı - Değiştirildi
+    cout << "Elbise 2 Rengi: " << elbise2.getRenk() << endl; // Sarı - Etkilendi
+
+
+    // Deep Copy
+    Elbise elbise3("Kırmızı");
+    Elbise elbise4 = Elbise(elbise3.getRenk());
+
+    cout << "Elbise 3 Rengi: " << elbise3.getRenk() << endl; // Kırmızı
+    cout << "Elbise 4 Rengi: " << elbise4.getRenk() << endl; // Kırmızı
+
+    elbise3.setRenk("Yeşil");
+
+    cout << "Elbise 3 Rengi: " << elbise3.getRenk() << endl; // Yeşil - Değiştirildi
+    cout << "Elbise 4 Rengi: " << elbise4.getRenk() << endl; // Kırmızı - Etkilenmedi
+
+    return (0);
+}
+
+
+```
 
