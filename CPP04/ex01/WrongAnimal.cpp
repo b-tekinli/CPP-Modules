@@ -17,12 +17,10 @@ WrongAnimal::~WrongAnimal()
 	cout << "WrongAnimal destroyed." << endl;
 }
 
-WrongAnimal	&WrongAnimal::operator=(const WrongAnimal &oth)
+void WrongAnimal::operator=(const WrongAnimal &oth)
 {
 	type = oth.type;
 	cout << "WrongAnimal copy assigment operator called." << endl;
-
-	return *this;
 }
 
 void WrongAnimal::makeSound() const

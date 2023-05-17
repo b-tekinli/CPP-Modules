@@ -15,11 +15,11 @@ protected:
 public:
 	WrongAnimal();
 	WrongAnimal(const WrongAnimal &oth);
-	~WrongAnimal();
+	virtual ~WrongAnimal();
 
-	WrongAnimal	&operator=(const WrongAnimal &oth);
+	void operator=(const WrongAnimal &oth);
 
-	void makeSound() const;
+	virtual void makeSound() const;
 	string getType() const;
 };
 
