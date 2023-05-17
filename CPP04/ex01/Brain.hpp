@@ -19,7 +19,7 @@ public:
 
     Brain &operator=(const Brain &oth);
 
-    const string &getIdea(int inx) const;
+    const string &getIdea(int idx) const;
 };
 
 #endif
