@@ -7,15 +7,17 @@
 class Cat : public Animal
 {
 private:
-	Brain *beg;
+	Brain *brain;
+
 public:
 	Cat();
 	Cat(const Cat &oth);
 	~Cat();
 
-	void operator=(const Cat& oth);
-	
-	virtual void makeSound() const;
+	Cat &operator=(const Cat &oth);
+
+	Brain *getBrain() const;
+	void makeSound() const;
 };
 
 #endif

@@ -4,7 +4,7 @@ Cat::Cat()
 {
 	type = "Cat";
 	cout << "Cat default constructor called." << endl;
-	beg = new Brain();
+	brain = new Brain();
 }
 
 Cat::Cat(const Cat &oth)
@@ -15,17 +15,23 @@ Cat::Cat(const Cat &oth)
 
 Cat::~Cat()
 {
+	delete brain;
 	cout << "Cat destroyed." << endl;
-	delete beg;
 }
 
-void Cat::operator=(const Cat &oth)
+Cat &Cat::operator=(const Cat &oth)
 {
 	type = oth.type;
 	cout << "Cat copy assigment operator called." << endl;
+	return (*this);
 }
 
 void Cat::makeSound() const
 {
 	cout << "Meow!" << endl;
+}
+
+Brain* Cat::getBrain() const
+{
+	return (brain);
 }
