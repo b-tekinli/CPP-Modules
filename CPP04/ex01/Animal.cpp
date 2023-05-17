@@ -17,12 +17,10 @@ Animal::~Animal()
 	cout << "Animal destroyed." << endl;
 }
 
-Animal &Animal::operator=(const Animal &oth)
+void Animal::operator=(const Animal &oth)
 {
 	type = oth.type;
 	cout << "Animal copy assigment operator called." << endl;
-	
-	return *this;
 }
 
 void Animal::makeSound() const
@@ -30,6 +28,7 @@ void Animal::makeSound() const
 	cout << "The Animal Sound" << endl;
 }
 
-string Animal::getType() const { 
-	return type; 
+string Animal::getType() const
+{
+	return type;
 }
