@@ -6,7 +6,7 @@ WrongCat::WrongCat()
 	cout << "WrongCat default constructor called." << endl;
 }
 
-WrongCat::WrongCat(const WrongCat& oth)
+WrongCat::WrongCat(const WrongCat &oth)
 {
 	*this = oth;
 	cout << "WrongCat copy constructor called." << endl;
@@ -17,12 +17,12 @@ WrongCat::~WrongCat()
 	cout << "WrongCat destroyed." << endl;
 }
 
-WrongCat	&WrongCat::operator=(const WrongCat& oth)
+WrongCat &WrongCat::operator=(const WrongCat &oth)
 {
 	type = oth.type;
 	cout << "WrongCat copy assigment operator called." << endl;
 
-	return *this;
+	return (*this);
 }
 
 void WrongCat::makeSound() const
