@@ -6,6 +6,8 @@
 using std::string;
 using std::cout;
 using std::endl;
+using std::setw;
+using std::left;
 
 class Animal
 {
