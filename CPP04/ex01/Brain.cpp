@@ -2,18 +2,6 @@
 
 Brain::Brain()
 {
-	 const std::string examples[] = {
-        "I want to sleep",
-        "I want to food",
-        "I want pets",
-        "I want to go for a walk",
-        "I want water",
-        "I want a treat",
-    };
-
-    for (int i = 0; i < 100; i++)
-        this->ideas[i] = examples[rand() % (sizeof(examples) / sizeof(string))];
-	
 	cout << "Brain default constructor called." << endl;
 }
 
