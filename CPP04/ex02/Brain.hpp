@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-using std::string;
 using std::cout;
 using std::endl;
+using std::string;
 
 class Brain
 {
@@ -18,6 +18,8 @@ public:
     ~Brain();
 
     Brain &operator=(const Brain &oth);
+
+    const string &getIdea(int idx) const;
 };
 
 #endif

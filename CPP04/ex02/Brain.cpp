@@ -18,12 +18,20 @@ Brain::~Brain()
 
 Brain &Brain::operator=(const Brain &oth)
 {
-	int	i = -1;
-	
-	while (++i < 100)
-		this->ideas[i] = oth.ideas[i];
+	if (this != &oth)
+	{
+		for (int i = 0; i < 100; i++)
+		{
+			ideas[i] = oth.ideas[i];
+		}
+	}
 
 	cout << "Brain copy assigment operator called." << endl;
 
 	return (*this);
+}
+
+const string &Brain::getIdea(int idx) const
+{
+	return (ideas[idx]);
 }
