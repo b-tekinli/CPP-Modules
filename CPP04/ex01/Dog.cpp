@@ -4,7 +4,7 @@ Dog::Dog()
 {
 	type = "Dog";
 	cout << "Dog default constructor called." << endl;
-	beg = new Brain();
+	brain = new Brain();
 }
 
 Dog::Dog(const Dog &oth)
@@ -15,17 +15,24 @@ Dog::Dog(const Dog &oth)
 
 Dog::~Dog()
 {
+	delete brain;
 	cout << "Dog destroyed." << endl;
-	delete beg;
 }
 
-void Dog::operator=(const Dog &oth)
+Dog &Dog::operator=(const Dog &oth)
 {
 	type = oth.type;
 	cout << "Dog copy assigment operator called." << endl;
+
+	return (*this);
 }
 
 void Dog::makeSound() const
 {
 	cout << "Bark!" << endl;
+}
+
+Brain *Dog::getBrain() const
+{
+	return (brain);
 }
