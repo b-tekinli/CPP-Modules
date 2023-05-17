@@ -2,6 +2,7 @@
 #define ANIMAL_HPP
 
 #include <iostream>
+#include <iomanip>
 
 using std::string;
 using std::cout;
