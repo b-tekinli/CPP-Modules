@@ -7,10 +7,10 @@ class Cat : public Animal
 {
 public:
 	Cat();
-	Cat(const Cat& oth);
+	Cat(const Cat &oth);
 	~Cat();
 
-	Cat	&operator=(const Cat& oth);
+	Cat	&operator=(const Cat &oth);
 	
 	void makeSound() const;
 };
