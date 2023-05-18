@@ -27,22 +27,22 @@ bool PhoneBook::addContact(const Contact &contact)
 void PhoneBook::searchContacts() const
 {
     cout << setw(15) << "Index"
-              << "|"
-              << setw(15) << "First Name"
-              << "|"
-              << setw(15) << "Last Name"
-              << "|"
-              << setw(15) << "Nickname"
-              << "|" << endl;
+         << "|"
+         << setw(15) << "First Name"
+         << "|"
+         << setw(15) << "Last Name"
+         << "|"
+         << setw(15) << "Nickname"
+         << "|" << endl;
     cout << setfill('-') << setw(65) << "-" << endl;
     cout << setfill(' ');
 
     for (int i = 0; i < numContacts; i++)
     {
-        cout << setw(15) << i << "|"
-                  << setw(15) << contacts[i].getFirstName() << "|"
-                  << setw(15) << contacts[i].getLastName() << "|"
-                  << setw(15) << contacts[i].getNickname() << "|" << endl;
+        cout << setw(15) << i << "|" << setw(15)
+             << contacts[i].getFirstName().substr(0, 9) + (contacts[i].getFirstName().length() > 9 ? "." : "") << "|"
+             << setw(15) << contacts[i].getLastName().substr(0, 9) + (contacts[i].getLastName().length() > 9 ? "." : "") << "|"
+             << setw(15) << contacts[i].getNickname().substr(0, 9) + (contacts[i].getNickname().length() > 9 ? "." : "") << "|" << endl;
     }
 
     if (numContacts == 0)
@@ -59,4 +59,26 @@ int PhoneBook::getSize() const
 Contact PhoneBook::getContact(int index) const
 {
     return contacts[index];
+}
+
+string get_line(string prompt)
+{
+    string str;
+    do
+    {
+        cout << prompt;
+        getline(cin, str);
+    } while (str.empty());
+
+    return str;
+}
+
+void PhoneBook::contactControl(string &firstName, string &lastName, string &nickname,
+                               string &phoneNumber, string &darkSecret)
+{
+    firstName = get_line("Enter FirstName:");
+    lastName = get_line("Enter LastName:");
+    nickname = get_line("Enter NickName:");
+    phoneNumber = get_line("Enter PhoneNumber:");
+    darkSecret = get_line("Enter DarkSecret:");
 }
