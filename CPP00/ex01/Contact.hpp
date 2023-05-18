@@ -5,12 +5,12 @@
 #include <iostream>
 #include <iomanip>
 
-using std::cout;
 using std::cin;
-using std::string;
+using std::cout;
 using std::endl;
-using std::setw;
 using std::setfill;
+using std::setw;
+using std::string;
 
 class Contact
 {
