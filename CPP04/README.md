@@ -149,7 +149,6 @@ public:
 };
 
 int main() {
-int main() {
     // Shallow Copy
     Elbise elbise1("Mavi");
     Elbise elbise2 = elbise1;
