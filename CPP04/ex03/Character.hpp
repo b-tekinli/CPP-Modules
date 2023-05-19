@@ -7,7 +7,7 @@ class Character : public ICharacter
 {
 private:
     string name;
-    AMateria *inventory[4];
+    AMateria *materia[4];
 
 public:
     Character(const string &name);

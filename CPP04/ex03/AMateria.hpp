@@ -2,7 +2,7 @@
 #define AMATERIA_HPP
 
 #include <iostream>
-#include <string.h>
+#include <string>
 #include "ICharacter.hpp"
 
 using std::cout;
