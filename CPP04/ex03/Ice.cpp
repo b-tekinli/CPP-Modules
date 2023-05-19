@@ -9,10 +9,9 @@ Ice::~Ice() {}
 Ice &Ice::operator=(Ice const &oth)
 {
     if (this != &oth)
-    {
         AMateria::operator=(oth);
-    }
-    return *this;
+
+    return (*this);
 }
 
 AMateria *Ice::clone() const
@@ -23,6 +22,6 @@ AMateria *Ice::clone() const
 void Ice::use(ICharacter &target)
 {
     cout << "* shoots an ice bolt at " << target.getName() << " *" << endl;
-    
+
     AMateria::use(target);
 }

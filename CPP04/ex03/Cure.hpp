@@ -9,7 +9,7 @@ public:
     Cure();
     Cure(Cure const &oth);
     virtual ~Cure();
-    
+
     Cure &operator=(Cure const &oth);
 
     AMateria *clone() const;
