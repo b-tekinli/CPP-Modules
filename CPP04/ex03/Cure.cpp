@@ -2,15 +2,15 @@
 
 Cure::Cure() : AMateria("cure") {}
 
-Cure::Cure(Cure const &src) : AMateria(src) {}
+Cure::Cure(Cure const &oth) : AMateria(oth) {}
 
 Cure::~Cure() {}
 
-Cure &Cure::operator=(Cure const &rhs)
+Cure &Cure::operator=(Cure const &oth)
 {
-    if (this != &rhs)
+    if (this != &oth)
     {
-        AMateria::operator=(rhs);
+        AMateria::operator=(oth);
     }
     return *this;
 }

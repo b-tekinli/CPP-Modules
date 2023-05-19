@@ -7,10 +7,10 @@ class Cure : public AMateria
 {
 public:
     Cure();
-    Cure(Cure const &src);
+    Cure(Cure const &oth);
     virtual ~Cure();
     
-    Cure &operator=(Cure const &rhs);
+    Cure &operator=(Cure const &oth);
 
     virtual AMateria *clone() const;
     virtual void use(ICharacter &target);
