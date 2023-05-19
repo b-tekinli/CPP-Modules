@@ -1,9 +1,10 @@
 #include "MateriaSource.hpp"
 
-MateriaSource::MateriaSource(void)
+MateriaSource::MateriaSource()
 {
     for (int i = 0; i < 4; i++)
         this->materia[i] = NULL;
+
     return;
 }
 
@@ -11,6 +12,7 @@ MateriaSource::MateriaSource(const MateriaSource &other)
 {
     for (int i = 0; i < 4; i++)
         this->materia[i] = (other.materia[i]) ? other.materia[i]->clone() : NULL;
+
     return;
 }
 
@@ -22,7 +24,8 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
         for (int i = 0; i < 4; i++)
             this->materia[i] = other.materia[i] ? other.materia[i]->clone() : NULL;
     }
-    return *this;
+
+    return (*this);
 }
 
 MateriaSource::~MateriaSource()
@@ -48,6 +51,6 @@ AMateria *MateriaSource::createMateria(const std::string &type)
     for (int i = 0; i < 4; i++)
         if (this->materia[i] && this->materia[i]->getType() == type)
             return (this->materia[i]->clone());
-            
+
     return (NULL);
 }
