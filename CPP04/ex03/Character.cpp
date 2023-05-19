@@ -21,10 +21,12 @@ Character &Character::operator=(const Character &other)
     {
         this->~Character();
         this->name = other.name;
+
         for (int i = 0; i < 4; i++)
             this->inventory[i] = (other.inventory[i]) ? other.inventory[i]->clone() : NULL;
     }
-    return *this;
+
+    return (*this);
 }
 
 Character::~Character()
