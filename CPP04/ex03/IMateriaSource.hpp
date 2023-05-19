@@ -9,7 +9,6 @@ public:
     virtual ~IMateriaSource() {}
 
     virtual void learnMateria(AMateria *) = 0;
-
     virtual AMateria *createMateria(string const &type) = 0;
 };
 
