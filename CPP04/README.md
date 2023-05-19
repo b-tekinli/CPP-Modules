@@ -159,8 +159,8 @@ int main() {
 
     elbise2.setRenk("Sarı");
 
-    cout << "Elbise 1 Rengi: " << elbise1.getRenk() << endl; // Sarı - Değiştirildi
-    cout << "Elbise 2 Rengi: " << elbise2.getRenk() << endl; // Sarı - Etkilendi
+    cout << "Elbise 1 Rengi: " << elbise1.getRenk() << endl; // Sarı - Etkilendi
+    cout << "Elbise 2 Rengi: " << elbise2.getRenk() << endl; // Sarı - Değiştirildi
 
 
     // Deep Copy
