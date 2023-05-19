@@ -2,15 +2,15 @@
 
 Ice::Ice() : AMateria("ice") {}
 
-Ice::Ice(Ice const &src) : AMateria(src) {}
+Ice::Ice(Ice const &oth) : AMateria(oth) {}
 
 Ice::~Ice() {}
 
-Ice &Ice::operator=(Ice const &rhs)
+Ice &Ice::operator=(Ice const &oth)
 {
-    if (this != &rhs)
+    if (this != &oth)
     {
-        AMateria::operator=(rhs);
+        AMateria::operator=(oth);
     }
     return *this;
 }
