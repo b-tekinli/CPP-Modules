@@ -12,7 +12,7 @@ Cure &Cure::operator=(Cure const &oth)
     {
         AMateria::operator=(oth);
     }
-    return *this;
+    return (*this);
 }
 
 AMateria *Cure::clone() const
