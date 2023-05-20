@@ -9,6 +9,8 @@ using std::cout;
 using std::endl;
 using std::string;
 
+class ICharacter;
+
 class AMateria
 {
 protected:
