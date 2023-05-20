@@ -20,14 +20,14 @@ int main()
     tmp = src->createMateria("cure");
     me->equip(tmp);
 
-    ICharacter *bob = new Character("bob");
+    ICharacter *daryl = new Character("Daryl");
 
-    me->use(0, *bob);
-    me->use(1, *bob);
+    me->use(0, *daryl);
+    me->use(1, *daryl);
 
     me->unequip(0);
 
-    delete bob;
+    delete daryl;
     delete me;
     delete src;
 
