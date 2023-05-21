@@ -7,12 +7,11 @@
 
 using std::cout;
 using std::endl;
-using std::string;
-using std::ostream;
 using std::exception;
+using std::ostream;
+using std::string;
 
-
-class Bureaucrat 
+class Bureaucrat
 {
 private:
     const string name;
@@ -25,8 +24,8 @@ public:
     Bureaucrat &operator=(const Bureaucrat &oth);
     Bureaucrat &operator++();
     Bureaucrat &operator--();
-    Bureaucrat  operator++(int);
-    Bureaucrat  operator--(int);
+    Bureaucrat operator++(int);
+    Bureaucrat operator--(int);
 
     string getName() const;
     int getGrade() const;
@@ -34,13 +33,13 @@ public:
     void incrementGrade();
     void decrementGrade();
 
-
-    class GradeTooHighException : public exception {
+    class GradeTooHighException : public exception
+    {
         const char *what() const throw();
     };
-    
-    
-    class GradeTooLowException : public exception {
+
+    class GradeTooLowException : public exception
+    {
         const char *what() const throw();
     };
 };
