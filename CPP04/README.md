@@ -179,3 +179,24 @@ int main() {
 
 ```
 
+--- 
+
+
+## Interfaces nedir?
+
+Interface bir sınıfın hangi fonksiyonları sağlaması gerektiğini belirten bir class gibi düşünülebilir. Bir interface'te, sadece saf sanal (pure virtual) fonksiyonlar bulunur ve bu fonksiyonlar için herhangi bir uygulama (implement) sağlanmaz. Interface, belirli bir fonksiyonu tanımlar ve bu fonksiyonu implement eden sınıflar, interface'teki tüm fonksiyonları implement etmek zorundadır. 
+
+Örnek;
+```cpp
+
+class Printer {
+public:
+    virtual void print() const = 0;
+};
+
+```
+
+Bu interface, print adında pure virtual bir fonksiyon içerir. Herhangi bir sınıf, bu interface'i implement etmek için print fonksiyonunu tanımlamak zorundadır.
+
+Peki interface ve abstract class arasındaki farkı nasıl anlayabiliriz? Abstract classlar, hem normal (non-virtual) fonksiyonlar hem de pure virtual fonksiyonlar içerebilir. Pure virtual fonksiyonlar, soyut sınıfları tamamlanmamış hale getirir ve türetilmiş sınıflar tarafından bu fonksiyonların uygulanması gerektiğini belirtir. Soyut sınıflar, genellikle somutlaştırılamayan (instantiated) ve doğrudan kullanılamayan sınıflardır, ancak türetilmiş sınıflar için bir temel sağlarlar.
+
