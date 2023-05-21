@@ -1,0 +1,26 @@
+NAME = Bureaucrat
+
+SRCS = main.cpp Bureaucrat.cpp
+
+CFAGS = -Wall -Wextra -Werror -std=c++98
+
+OBJS = $(SRCS:.cpp= .o)
+
+RM = rm -rf
+
+C++ = c++
+
+all : $(NAME)
+
+$(NAME) : $(SRCS)
+	$(C++) $(CFLAGS) $(SRCS) -o $(NAME)
+
+clean :
+	$(RM) $(OBJS)
+
+fclean: clean
+	$(RM) $(NAME)
+
+re : fclean all
+
+.PHONY = all clean fclean re
