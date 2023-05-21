@@ -1,8 +1,9 @@
 #include "Bureaucrat.hpp"
 
-int main() 
+int main()
 {
-    try {
+    try
+    {
         Bureaucrat bureaucrat("Daryl", 50);
         cout << bureaucrat << endl;
 
@@ -12,10 +13,10 @@ int main()
         bureaucrat.decrementGrade();
         cout << bureaucrat << endl;
 
-
         Bureaucrat invalidBureaucrat("Rick", 0);
     }
-    catch (std::exception& e) {
+    catch (exception &e)
+    {
         cout << "Exception caught: " << e.what() << endl;
     }
 
