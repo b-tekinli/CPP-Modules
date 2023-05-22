@@ -2,8 +2,7 @@
 
 int main()
 {
-    try
-    {
+    try {
         Bureaucrat bureaucrat("Daryl", 50);
         cout << bureaucrat << endl;
 
@@ -14,11 +13,9 @@ int main()
         cout << bureaucrat << endl;
 
         Bureaucrat invalidBureaucrat("Rick", 0);
-    }
-    catch (exception &e)
-    {
+    } catch (exception &e) {
         cout << "Exception caught: " << e.what() << endl;
     }
 
-    return 0;
+    return (0);
 }

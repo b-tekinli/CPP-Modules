@@ -14,11 +14,13 @@ using std::string;
 class Bureaucrat
 {
 private:
-    const string name;
+    string name;
     int grade;
 
 public:
+    Bureaucrat();
     Bureaucrat(const string name, int grade);
+    Bureaucrat(const Bureaucrat &oth);
     ~Bureaucrat();
 
     Bureaucrat &operator=(const Bureaucrat &oth);
@@ -27,20 +29,25 @@ public:
     Bureaucrat operator++(int);
     Bureaucrat operator--(int);
 
-    string getName() const;
+    string const getName() const;
     int getGrade() const;
+    void setGrade(int grade);
 
     void incrementGrade();
     void decrementGrade();
 
     class GradeTooHighException : public exception
     {
-        const char *what() const throw();
+        const char *what() const throw() {
+            return "Bureaucrat grade is too high!";
+        }
     };
 
     class GradeTooLowException : public exception
     {
-        const char *what() const throw();
+        const char *what() const throw() {
+            return "Bureaucrat grade is too low!";
+        }
     };
 };
 
