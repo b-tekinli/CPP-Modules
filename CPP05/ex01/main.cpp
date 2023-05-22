@@ -4,7 +4,7 @@
 int main() 
 {
     try {
-        Bureaucrat bureaucrat("John Doe", 50);
+        Bureaucrat bureaucrat("Daryl", 50);
         cout << bureaucrat << endl;
 
         Form form("Tax Form", 75, 100);
@@ -18,9 +18,9 @@ int main()
 
         bureaucrat.signForm(form);
         cout << form << endl;
-    } catch (const exception& e) {
+    } catch (const exception &e) {
         cout << "Exception: " << e.what() << endl;
     }
 
-    return 0;
+    return (0);
 }
