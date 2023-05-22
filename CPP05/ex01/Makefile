@@ -1,6 +1,6 @@
 NAME = Bureaucrat
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
 CFAGS = -Wall -Wextra -Werror -std=c++98
 
