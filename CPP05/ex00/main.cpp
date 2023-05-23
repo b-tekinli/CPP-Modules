@@ -13,7 +13,8 @@ int main()
         cout << bureaucrat << endl;
 
         Bureaucrat invalidBureaucrat("Rick", 0);
-    } catch (exception &e) {
+    } 
+    catch (exception &e) {
         cout << "Exception caught: " << e.what() << endl;
     }
 
