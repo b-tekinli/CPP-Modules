@@ -12,6 +12,9 @@ private:
     const int executeGrade;
 
 public:
+    Form(const string &name, int signGrade, int executeGrade);
+    ~Form();
+    
     class GradeTooHighException : public exception
     {
         const char *what() const throw() {
@@ -25,9 +28,6 @@ public:
             return "Bureaucrat grade is too low!";
         }
     };
-
-    Form(const string &name, int signGrade, int executeGrade);
-    ~Form();
 
     string getName() const;
     int getExecuteGrade() const;
