@@ -76,8 +76,6 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::setGrade(int grade)
 {
     this->grade = grade;
-
-    return;
 }
 
 void Bureaucrat::incrementGrade()
