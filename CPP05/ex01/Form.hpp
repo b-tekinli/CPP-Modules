@@ -18,14 +18,14 @@ public:
     class GradeTooHighException : public exception
     {
         const char *what() const throw() {
-            return "Bureaucrat grade is too high!";
+            return "Form grade is too high!";
         }
     };
 
     class GradeTooLowException : public exception
     {
         const char *what() const throw() {
-            return "Bureaucrat grade is too low!";
+            return "Form grade is too low!";
         }
     };
 
