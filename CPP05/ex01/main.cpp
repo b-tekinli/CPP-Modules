@@ -4,7 +4,7 @@
 int main() 
 {
     try {
-        Bureaucrat bureaucrat("Daryl", 50);
+        Bureaucrat bureaucrat("Daryl", 75);
         cout << bureaucrat << endl;
 
         Form form("Tax Form", 75, 100);
@@ -13,7 +13,7 @@ int main()
         bureaucrat.signForm(form);
         cout << form << endl;
 
-        bureaucrat.incrementGrade();
+        bureaucrat.decrementGrade();
         cout << bureaucrat << endl;
 
         bureaucrat.signForm(form);
