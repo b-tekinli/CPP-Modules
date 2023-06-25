@@ -43,6 +43,6 @@ int main() {
     return 0;
 }
 
-```,
+```
 
 Yukarıda *exception &e* şeklinde bir referans kullanıyoruz. Orada yakalanan istisnai hata durumu exception class'ından bir nesne türeterek aslında hata türü olduğunu belirtiyor. Aynı şekilde *what()* fonksiyonunu da *e.what()* ifadesi ile yakalanan hatanın açıklamasını ekrana yazdırmak için kullanıyoruz. Yani _e.what()_ ifadesi, istisna nesnesinin içerdiği hata mesajını döndürür. Örnekteki kodda, ekrana "Hata yakalandı: Sıfıra bölme hatası!" şeklinde bir çıktı verir.
