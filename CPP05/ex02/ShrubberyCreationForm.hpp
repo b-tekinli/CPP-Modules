@@ -5,9 +5,6 @@
 
 class ShrubberyCreationForm : public AForm
 {
-private:
-    const string target;
-
 public:
     ShrubberyCreationForm(const string &target);
     ~ShrubberyCreationForm();
