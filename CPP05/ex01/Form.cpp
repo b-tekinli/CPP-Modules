@@ -1,6 +1,8 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
+Form::Form() : name("Form"), signedStatus(false), signGrade(1), executeGrade(1) { }
+
 Form::Form(const string &name, int signGrade, int executeGrade)
     : name(name), signedStatus(false), signGrade(signGrade), executeGrade(executeGrade)
 {

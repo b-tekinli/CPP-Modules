@@ -12,6 +12,7 @@ private:
     const int executeGrade;
 
 public:
+    Form();
     Form(const string &name, int signGrade, int executeGrade);
     ~Form();
     
