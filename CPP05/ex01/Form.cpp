@@ -39,10 +39,14 @@ void Form::setSigned(bool signedStatus)
 
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
-    if (bureaucrat.getGrade() <= signGrade)
-        signedStatus = true;
+    if(!signedStatus) {
+        if (bureaucrat.getGrade() <= signGrade)
+            signedStatus = true;
+        else
+            throw GradeTooLowException();
+    }
     else
-        throw GradeTooLowException();
+        throw GradeTooHighException();
 }
 
 ostream &operator<<(ostream &os, const Form &form)
