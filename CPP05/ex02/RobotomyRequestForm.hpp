@@ -2,6 +2,9 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class RobotomyRequestForm : public AForm
 {

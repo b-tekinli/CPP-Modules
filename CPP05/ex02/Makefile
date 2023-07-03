@@ -1,10 +1,10 @@
 NAME = Bureaucrat
 
-SRC = AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
+SRCS = AForm.cpp Bureaucrat.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp main.cpp
 
 CFAGS = -Wall -Wextra -Werror -std=c++98
 
-OBJS = $(SRCS:.cpp= .o)
+OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -rf
 
@@ -12,7 +12,7 @@ C++ = c++
 
 all : $(NAME)
 
-$(NAME) : $(SRCS)
+$(NAME) : $(OBJS)
 	$(C++) $(CFLAGS) $(SRCS) -o $(NAME)
 
 clean :

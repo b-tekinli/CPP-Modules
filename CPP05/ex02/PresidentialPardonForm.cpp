@@ -5,13 +5,12 @@ PresidentialPardonForm::PresidentialPardonForm(const string &target)
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
 
-void PresidentialPardonForm::execute(const Bureaucrat &executor) const
-{
-    if (!isSigned())
+void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
+    if(!isSigned())
         throw AForm::GradeTooLowException();
+    
+    if(executor.getGrade() > getExecuteGrade())
+        throw AForm::GradeTooHighException();
 
-    if (executor.getGrade() > getExecuteGrade())
-        throw AForm::GradeTooLowException();
-
-    cout << target << " has been pardoned by Zaphod Beeblebrox." << endl;
+    cout << target << "has been pardoned by Zaphod Beeblebrox." << endl;
 }

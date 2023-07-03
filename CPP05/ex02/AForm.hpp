@@ -8,11 +8,15 @@
 
 class Bureaucrat;
 
+using std::string;
+using std::ostream;
+using std::exception;
+
 class AForm
 {
 private:
     const string name;
-    bool isSigned;
+    bool sign;
     const int signGrade;
     const int executeGrade;
 
