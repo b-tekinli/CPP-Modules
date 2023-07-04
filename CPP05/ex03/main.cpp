@@ -1,30 +1,14 @@
-#include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-    try
-    {
-        Bureaucrat bureaucrat("John Doe", 50);
+    Intern someRandomIntern;
+    AForm *rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
-        ShrubberyCreationForm shrubberyForm("home");
-        RobotomyRequestForm robotomyForm("John");
-        PresidentialPardonForm pardonForm("Jane");
+    AForm *unknownForm = someRandomIntern.makeForm("unknown form", "Target");
 
-        bureaucrat.signForm(shrubberyForm);
-        bureaucrat.signForm(robotomyForm);
-        bureaucrat.signForm(pardonForm);
+    delete rrf;
+    delete unknownForm;
 
-        bureaucrat.executeForm(shrubberyForm);
-        bureaucrat.executeForm(robotomyForm);
-        bureaucrat.executeForm(pardonForm);
-    }
-    catch (const exception &e)
-    {
-        cout << "Exception occurred: " << e.what() << endl;
-    }
-
-    return (0);
+    return 0;
 }
