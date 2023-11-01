@@ -13,7 +13,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
     if (executor.getGrade() > getExecuteGrade())
         throw AForm::GradeTooLowException();
 
-    ofstream outputFile(target + " shrubbery");
+    ofstream outputFile(target + "_shrubbery");
 
     if (outputFile)
     {
