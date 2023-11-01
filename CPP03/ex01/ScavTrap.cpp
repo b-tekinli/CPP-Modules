@@ -1,7 +1,9 @@
 #include "ScavTrap.hpp"
 
 #include <iostream>
-using namespace std;
+using std::cout;
+using std::endl;
+using std::ostream;
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
