@@ -7,11 +7,11 @@ int main()
 {
     try
     {
-        Bureaucrat bureaucrat("John Doe", 50);
+        Bureaucrat bureaucrat("Darly", 50);
 
+        PresidentialPardonForm pardonForm("Maggie");
+        RobotomyRequestForm robotomyForm("Jesus");
         ShrubberyCreationForm shrubberyForm("home");
-        RobotomyRequestForm robotomyForm("John");
-        PresidentialPardonForm pardonForm("Jane");
 
         bureaucrat.signForm(shrubberyForm);
         bureaucrat.signForm(robotomyForm);
