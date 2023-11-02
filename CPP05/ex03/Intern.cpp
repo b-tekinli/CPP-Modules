@@ -12,7 +12,8 @@ AForm *Intern::makeForm(const string &AFormName, const string &target) const
     string AFormNames[3] = {
         "shrubbery creation",
         "robotomy request",
-        "presidential pardon"};
+        "presidential pardon"
+    };
 
     int i = 0;
     while (i < 3 && AFormNames[i] != AFormName)
