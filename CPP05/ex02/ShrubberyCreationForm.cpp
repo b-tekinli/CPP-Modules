@@ -13,7 +13,8 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
     if (executor.getGrade() > getExecuteGrade())
         throw AForm::GradeTooLowException();
 
-    ofstream outputFile(target + "_shrubbery");
+    string str = target + "_shrubbery";
+    ofstream outputFile(str.c_str());
 
     if (outputFile)
     {
@@ -23,6 +24,6 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
     }
     else
     {
-        throw runtime_error("Failed to create shrubbery file for " + target + ".");
+        throw runtime_error("Failed to create shrubbery file for " + target + "."); //runtime_error nedir?
     }
 }

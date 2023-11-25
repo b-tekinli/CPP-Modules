@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib> 
 #include <fstream>
 #include "Bureaucrat.hpp"
 

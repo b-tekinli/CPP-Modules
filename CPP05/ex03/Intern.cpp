@@ -24,7 +24,7 @@ AForm *Intern::makeForm(const string &AFormName, const string &target) const
     switch (i)
     {
     case 0:
-        tmp = new ShrubberyCreationForm(target);
+        tmp = new ShrubberyCreationForm(target); //we should add shrubbery
         break;
     case 1:
         tmp = new RobotomyRequestForm(target);

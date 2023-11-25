@@ -13,42 +13,41 @@ using std::string;
 
 class Bureaucrat
 {
-private:
-    string name;
-    int grade;
+    private:
+        string name;
+        int grade;
 
-public:
-    Bureaucrat();
-    Bureaucrat(const string name, int grade);
-    Bureaucrat(const Bureaucrat &oth);
-    ~Bureaucrat();
+    public:
+        Bureaucrat();
+        Bureaucrat(const string name, int grade);
+        Bureaucrat(const Bureaucrat &oth);
+        ~Bureaucrat();
 
-    Bureaucrat &operator=(const Bureaucrat &oth);
-    Bureaucrat &operator++();
-    Bureaucrat &operator--();
-    Bureaucrat operator++(int);
-    Bureaucrat operator--(int);
+        Bureaucrat &operator=(const Bureaucrat &oth);
+        Bureaucrat &operator++();
+        Bureaucrat &operator--();
+        Bureaucrat operator++(int);
+        Bureaucrat operator--(int);
 
-    string const getName() const;
-    int getGrade() const;
-    void setGrade(int grade);
+        string const getName() const;
+        int getGrade() const;
+        void setGrade(int grade);
 
-    void incrementGrade();
-    void decrementGrade();
+        void incrementGrade();
+        void decrementGrade();
 
-    class GradeTooHighException : public exception
-    {
-        const char *what() const throw() {
-            return "Bureaucrat grade is too high!";
-        }
-    };
-
-    class GradeTooLowException : public exception
-    {
-        const char *what() const throw() {
-            return "Bureaucrat grade is too low!";
-        }
-    };
+        class GradeTooHighException : public exception
+        {
+            const char *what() const throw() { //exception = e && index = i && what ifadesi yakanan hatanın //neden what? //throw neyi ifade eder.
+                return "Bureaucrat grade is too high!";
+            }
+        };
+        class GradeTooLowException : public exception
+        {
+            const char *what() const throw() { //const char * veri bütünlüğünü korumak için yapılır
+                return "Bureaucrat grade is too low!";
+            }
+        };
 };
 
 ostream &operator<<(ostream &os, const Bureaucrat &oth);

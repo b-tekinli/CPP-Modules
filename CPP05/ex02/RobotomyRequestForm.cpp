@@ -15,7 +15,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 
     cout << "Drilling noises..." << endl;
 
-    if (rand() % 2 == 0)
+    if (rand() % 2 == 0) //neden random sayı alıyoruz???
         cout << target << " has been robotomized successfully." << endl;
     else
         cout << "Robotomy failed for " << target << "." << endl;

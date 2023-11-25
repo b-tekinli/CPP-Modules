@@ -4,7 +4,7 @@ SRCS = main.cpp Bureaucrat.cpp
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-OBJS = $(SRCS:.cpp= .o)
+OBJS = $(SRCS:%.cpp=%.o)
 
 RM = rm -rf
 
@@ -12,8 +12,8 @@ C++ = c++
 
 all : $(NAME)
 
-$(NAME) : $(SRCS)
-	$(C++) $(CFLAGS) $(SRCS) -o $(NAME)
+$(NAME) : $(OBJS)
+	$(C++) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean :
 	$(RM) $(OBJS)

@@ -1,9 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150)
-{
-    return;
-}
+Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150) {}
 
 Bureaucrat::Bureaucrat(const string name, int grade) : name(name)
 {
@@ -27,21 +24,21 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oth)
 
 Bureaucrat::~Bureaucrat() { }
 
-Bureaucrat &Bureaucrat::operator++()
+Bureaucrat &Bureaucrat::operator++() //pre increment
 {
     this->grade++;
 
     return (*this);
 }
 
-Bureaucrat &Bureaucrat::operator--()
+Bureaucrat &Bureaucrat::operator--() //pre decrement
 {
     this->grade--;
 
     return (*this);
 }
 
-Bureaucrat Bureaucrat::operator++(int)
+Bureaucrat Bureaucrat::operator++(int) //post incremenet
 {
     if (grade >= 150)
         throw GradeTooLowException();
@@ -52,14 +49,13 @@ Bureaucrat Bureaucrat::operator++(int)
     return (temp);
 }
 
-Bureaucrat Bureaucrat::operator--(int)
+Bureaucrat Bureaucrat::operator--(int) //post decrement
 {
     if (grade <= 1)
         throw GradeTooHighException();
 
     Bureaucrat temp = *this;
     --*this;
-
     return (temp);
 }
 
