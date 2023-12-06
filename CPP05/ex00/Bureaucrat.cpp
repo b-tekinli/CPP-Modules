@@ -24,21 +24,21 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oth)
 
 Bureaucrat::~Bureaucrat() { }
 
-Bureaucrat &Bureaucrat::operator++() //pre increment
+Bureaucrat &Bureaucrat::operator++()
 {
     this->grade++;
 
     return (*this);
 }
 
-Bureaucrat &Bureaucrat::operator--() //pre decrement
+Bureaucrat &Bureaucrat::operator--()
 {
     this->grade--;
 
     return (*this);
 }
 
-Bureaucrat Bureaucrat::operator++(int) //post incremenet
+Bureaucrat Bureaucrat::operator++(int)
 {
     if (grade >= 150)
         throw GradeTooLowException();
@@ -49,7 +49,7 @@ Bureaucrat Bureaucrat::operator++(int) //post incremenet
     return (temp);
 }
 
-Bureaucrat Bureaucrat::operator--(int) //post decrement
+Bureaucrat Bureaucrat::operator--(int)
 {
     if (grade <= 1)
         throw GradeTooHighException();

@@ -38,13 +38,13 @@ class Bureaucrat
 
         class GradeTooHighException : public exception
         {
-            const char *what() const throw() { //exception = e && index = i && what ifadesi yakanan hatanın //neden what? //throw neyi ifade eder.
+            const char *what() const throw() {
                 return "Bureaucrat grade is too high!";
             }
         };
         class GradeTooLowException : public exception
         {
-            const char *what() const throw() { //const char * veri bütünlüğünü korumak için yapılır
+            const char *what() const throw() {
                 return "Bureaucrat grade is too low!";
             }
         };
