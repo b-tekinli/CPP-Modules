@@ -35,6 +35,7 @@ public:
     bool isSigned() const;
     int getSignGrade() const;
     void setSigned(bool signedStatus);
+    
     void beSigned(const Bureaucrat &bureaucrat);
 };
 
