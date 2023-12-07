@@ -24,6 +24,6 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
     }
     else
     {
-        throw runtime_error("Failed to create shrubbery file for " + target + "."); //runtime_error nedir?
+        throw runtime_error("Failed to create shrubbery file for " + target + ".");
     }
 }
