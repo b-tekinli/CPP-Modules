@@ -9,7 +9,7 @@ AForm::AForm(const string &name, int signGrade, int executeGrade)
 		throw GradeTooLowException();
 }
 
-AForm::~AForm() {   }
+AForm::~AForm() {}
 
 const string &AForm::getName() const { return (name); }
 
@@ -33,7 +33,6 @@ const char *AForm::GradeTooLowException::what() const throw() { return "Form gra
 
 ostream &operator<<(ostream &os, const AForm &form)
 {
-	os << "Form: " << form.getName() << ", Sign Grade: " << form.getSignGrade() << ", Execute Grade: " <<
-		 form.getExecuteGrade() << ", Signed: " << (form.isSigned() ? "Yes" : "No");
+	os << "Form: " << form.getName() << ", Sign Grade: " << form.getSignGrade() << ", Execute Grade: " << form.getExecuteGrade() << ", Signed: " << (form.isSigned() ? "Yes" : "No");
 	return (os);
 }

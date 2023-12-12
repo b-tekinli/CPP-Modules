@@ -3,15 +3,15 @@
 
 #include <iostream>
 #include <string>
-#include <cstdlib> 
+#include <cstdlib>
 #include <fstream>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-using std::string;
-using std::ostream;
 using std::exception;
+using std::ostream;
+using std::string;
 
 class AForm
 {
@@ -35,14 +35,14 @@ public:
 
 	class GradeTooHighException : public exception
 	{
-		public:
-			virtual const char *what() const throw();
+	public:
+		virtual const char *what() const throw();
 	};
 
 	class GradeTooLowException : public exception
 	{
-		public:
-			virtual const char *what() const throw();
+	public:
+		virtual const char *what() const throw();
 	};
 };
 

@@ -12,7 +12,7 @@ public:
 	PresidentialPardonForm(const string &target);
 	~PresidentialPardonForm();
 
-	void	execute(const Bureaucrat &executor) const;
+	void execute(const Bureaucrat &executor) const;
 };
 
 #endif

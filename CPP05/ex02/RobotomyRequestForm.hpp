@@ -15,7 +15,7 @@ public:
 	RobotomyRequestForm(const string &target);
 	~RobotomyRequestForm();
 
-	void	execute(const Bureaucrat &executor) const;
+	void execute(const Bureaucrat &executor) const;
 };
 
 #endif

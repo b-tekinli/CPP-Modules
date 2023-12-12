@@ -4,14 +4,14 @@
 #include "ShrubberyCreationForm.hpp"
 
 int main()
-{	
+{
 	try
 	{
 		Bureaucrat bureaucrat("Darly", 40);
 
-		PresidentialPardonForm	pardonForm("Maggie");
-		RobotomyRequestForm		robotomyForm("Jesus");
-		ShrubberyCreationForm	shrubberyForm("home");
+		PresidentialPardonForm pardonForm("Maggie");
+		RobotomyRequestForm robotomyForm("Jesus");
+		ShrubberyCreationForm shrubberyForm("home");
 
 		bureaucrat.signForm(shrubberyForm);
 		bureaucrat.signForm(robotomyForm);

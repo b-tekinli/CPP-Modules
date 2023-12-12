@@ -5,7 +5,6 @@
 using std::ofstream;
 using std::runtime_error;
 
-
 class ShrubberyCreationForm : public AForm
 {
 private:
@@ -15,7 +14,7 @@ public:
 	ShrubberyCreationForm(const string &target);
 	~ShrubberyCreationForm();
 
-	void	execute(const Bureaucrat &executor) const;
+	void execute(const Bureaucrat &executor) const;
 };
 
 #endif
