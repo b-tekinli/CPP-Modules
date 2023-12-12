@@ -2,23 +2,22 @@
 
 int main()
 {
-    try
-    {       
-        Intern someRandomIntern;
-        AForm *rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	try
+	{
+		Intern someRandomIntern;
+		AForm *rrf = someRandomIntern.makeForm("shrubbery", "Bender");
+		AForm *unknownForm = someRandomIntern.makeForm("unknown", "Target");
+		Bureaucrat man("men", 1);
 
-        AForm *unknownForm = someRandomIntern.makeForm("unknown form", "Target");
+		man.signForm(*rrf);
+		rrf->execute(man);
+		delete rrf;
+		delete unknownForm;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
-        delete rrf;
-        delete unknownForm;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-
-    
-    
-
-    return 0;
+	return 0;
 }

@@ -9,13 +9,13 @@ class Bureaucrat;
 class RobotomyRequestForm : public AForm
 {
 private:
-    const string target;
+	const string target;
 
 public:
-    RobotomyRequestForm(const string &target);
-    ~RobotomyRequestForm();
+	RobotomyRequestForm(const string &target);
+	~RobotomyRequestForm();
 
-    void execute(const Bureaucrat &executor) const;
+	void	execute(const Bureaucrat &executor) const;
 };
 
 #endif

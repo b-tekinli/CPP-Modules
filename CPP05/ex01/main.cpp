@@ -1,26 +1,29 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-int main() 
+int main()
 {
-    try {
-        Bureaucrat bureaucrat("Daryl", 75);
-        cout << bureaucrat << endl;
+	try
+	{
+		Bureaucrat bureaucrat("Daryl", 75);
+		cout << bureaucrat << endl;
 
-        Form form("Tax Form", 75, 100);
-        cout << form << endl;
+		Form form("Tax Form", 75, 100);
+		cout << form << endl;
 
-        bureaucrat.signForm(form);
-        cout << form << endl;
+		bureaucrat.signForm(form);
+		cout << form << endl;
 
-        bureaucrat.decrementGrade();
-        cout << bureaucrat << endl;
+		bureaucrat.decrementGrade();
+		cout << bureaucrat << endl;
 
-        bureaucrat.signForm(form);
-        cout << form << endl;
-    } catch (const exception &e) {
-        cout << "Exception: " << e.what() << endl;
-    }
+		bureaucrat.signForm(form);
+		cout << form << endl;
+	}
+	catch (const exception &e)
+	{
+		cout << "Exception: " << e.what() << endl;
+	}
 
-    return (0);
+	return (0);
 }
