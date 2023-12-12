@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150) {  }
+Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150) {}
 
 Bureaucrat::Bureaucrat(const string &name, int grade)
 	: name(name), grade(grade)
@@ -11,9 +11,9 @@ Bureaucrat::Bureaucrat(const string &name, int grade)
 		throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &oth) : name(oth.name), grade(oth.grade) { }
+Bureaucrat::Bureaucrat(const Bureaucrat &oth) : name(oth.name), grade(oth.grade) {}
 
-Bureaucrat::~Bureaucrat() {  }
+Bureaucrat::~Bureaucrat() {}
 
 const string &Bureaucrat::getName() const { return (name); }
 

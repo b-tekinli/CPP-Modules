@@ -1,9 +1,9 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(const string &target)
-	: AForm("Robotomy Request Form", 72, 45), target(target) {  }
+	: AForm("Robotomy Request Form", 72, 45), target(target) {}
 
-RobotomyRequestForm::~RobotomyRequestForm() {  }
+RobotomyRequestForm::~RobotomyRequestForm() {}
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {

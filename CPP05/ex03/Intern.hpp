@@ -9,15 +9,15 @@ public:
 	Intern();
 	~Intern();
 
-	AForm	*makeForm(const string &formName, const string &formTarget) const;
+	AForm *makeForm(const string &formName, const string &formTarget) const;
 
 	class InvalidAFormException : public exception
 	{
-		public:
-			virtual const char *what() const throw()
-			{
-				return "Invalid AForm type";
-			}
+	public:
+		virtual const char *what() const throw()
+		{
+			return "Invalid AForm type";
+		}
 	};
 };
 

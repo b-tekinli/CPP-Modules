@@ -14,9 +14,9 @@ int main()
 		delete rrf;
 		delete unknownForm;
 	}
-	catch(const std::exception& e)
+	catch (const exception &e)
 	{
-		std::cerr << e.what() << '\n';
+		cerr << e.what() << '\n';
 	}
 
 	return 0;

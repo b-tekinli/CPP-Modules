@@ -8,13 +8,13 @@ using std::runtime_error;
 class ShrubberyCreationForm : public AForm
 {
 private:
-	const string	target;
+	const string target;
 
 public:
 	ShrubberyCreationForm(const string &target);
 	~ShrubberyCreationForm();
 
-	void	execute(const Bureaucrat &executor) const;
+	void execute(const Bureaucrat &executor) const;
 };
 
 #endif

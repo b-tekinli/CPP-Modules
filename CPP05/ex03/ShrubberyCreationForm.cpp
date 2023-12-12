@@ -1,9 +1,9 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(const string &target)
-	: AForm("Shrubbery Creation Form", 145, 137), target(target) {  }
+	: AForm("Shrubbery Creation Form", 145, 137), target(target) {}
 
-ShrubberyCreationForm::~ShrubberyCreationForm() {  }
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
@@ -19,21 +19,22 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	if (outputFile)
 	{
 		outputFile << "                    \\\n"
-				"          |         |\n"
-				"          |       \\ /\\ \n"
-				"   _ .     \\   „;=`y   .   |\n"
-				" .⁻⁻> \\«  ` |  `: /”» '   /\\ \n"
-				". ,/ `\\;`.  `=„\\`/; „='  ”.='    |\n"
-				" '   , =\\;` /, =”;„  ==./--=.”» /\n"
-				"    '     \\\\`v  8/,”-./ ``  ,-`/--'\n"
-				"           \\\\\\|//  ` v__,=”   \\ \n"
-				"            \\\\y¡' _,/,<='      \n"
-				"             \\8|y',-'  ``\\ \n"
-				"             |{ o/\\\n"
-				"             |) |\n"
-				"             |; |\n"
-				"             |; |\n"
-				"            „{) o\\ \n" << std::endl;
+					  "          |         |\n"
+					  "          |       \\ /\\ \n"
+					  "   _ .     \\   „;=`y   .   |\n"
+					  " .⁻⁻> \\«  ` |  `: /”» '   /\\ \n"
+					  ". ,/ `\\;`.  `=„\\`/; „='  ”.='    |\n"
+					  " '   , =\\;` /, =”;„  ==./--=.”» /\n"
+					  "    '     \\\\`v  8/,”-./ ``  ,-`/--'\n"
+					  "           \\\\\\|//  ` v__,=”   \\ \n"
+					  "            \\\\y¡' _,/,<='      \n"
+					  "             \\8|y',-'  ``\\ \n"
+					  "             |{ o/\\\n"
+					  "             |) |\n"
+					  "             |; |\n"
+					  "             |; |\n"
+					  "            „{) o\\ \n"
+				   << std::endl;
 		outputFile.close();
 		cout << "Shrubbery created for " << target << "." << endl;
 	}

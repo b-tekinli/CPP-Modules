@@ -9,7 +9,7 @@ AForm::AForm(const string &name, int signGrade, int executeGrade)
 		throw GradeTooLowException();
 }
 
-AForm::~AForm() {  }
+AForm::~AForm() {}
 
 const string &AForm::getName() const { return (name); }
 

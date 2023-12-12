@@ -6,12 +6,13 @@
 class PresidentialPardonForm : public AForm
 {
 private:
-	const string	target;
+	const string target;
+
 public:
 	PresidentialPardonForm(const string &target);
 	~PresidentialPardonForm();
 
-	void	execute(const Bureaucrat &executor) const;
+	void execute(const Bureaucrat &executor) const;
 };
 
 #endif

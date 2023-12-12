@@ -11,42 +11,43 @@ using std::endl;
 using std::exception;
 using std::ostream;
 using std::string;
+using std::cerr;
 
 class AForm;
 
 class Bureaucrat
 {
 private:
-	const	string name;
-	int		grade;
+	const string name;
+	int grade;
 
 public:
 	Bureaucrat();
 	Bureaucrat(const Bureaucrat &oth);
 	Bureaucrat(const string &name, int grade);
 	~Bureaucrat();
-	Bureaucrat		&operator=(const Bureaucrat &oth);
+	Bureaucrat &operator=(const Bureaucrat &oth);
 
-	const string	&getName() const;
-	int				getGrade() const;
-	void			incrementGrade();
-	void			decrementGrade();
-	void			signForm(AForm &form) const;
-	void			executeForm(const AForm &form) const;
+	const string &getName() const;
+	int getGrade() const;
+	void incrementGrade();
+	void decrementGrade();
+	void signForm(AForm &form) const;
+	void executeForm(const AForm &form) const;
 
 	class GradeTooHighException : public exception
 	{
-		public:
-			virtual const char *what() const throw();
+	public:
+		virtual const char *what() const throw();
 	};
 
 	class GradeTooLowException : public exception
 	{
-		public:
-			virtual const char *what() const throw();
+	public:
+		virtual const char *what() const throw();
 	};
 };
 
-ostream		&operator<<(ostream &os, const Bureaucrat &bureaucrat);
+ostream &operator<<(ostream &os, const Bureaucrat &bureaucrat);
 
 #endif
