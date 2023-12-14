@@ -37,13 +37,19 @@ public:
 	class GradeTooHighException : public exception
 	{
 	public:
-		virtual const char *what() const throw();
+		virtual const char *what() const throw()
+		{
+			return "Bureaucrat grade is too high!";
+		}
 	};
 
 	class GradeTooLowException : public exception
 	{
 	public:
-		virtual const char *what() const throw();
+		virtual const char *what() const throw()
+		{
+			return "Bureaucrat grade is too low!";
+		}
 	};
 };
 
