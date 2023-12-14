@@ -38,13 +38,3 @@ ostream &operator<<(ostream &os, const Form &form)
 	   << ", Execute Grade: " << form.getExecuteGrade();
 	return os;
 }
-
-const char *Form::GradeTooLowException::what() const throw()
-{
-	return "Form grade is too low!";
-}
-
-const char *Form::GradeTooHighException::what() const throw()
-{
-	return "Form grade is too high!";
-}

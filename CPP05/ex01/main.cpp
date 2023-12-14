@@ -8,7 +8,7 @@ int main()
 		Bureaucrat bureaucrat("Daryl", 75);
 		cout << bureaucrat << endl;
 
-		Form form("Tax Form", 75, 100);
+		Form form("Presidental Pardon Form", 75, 100);
 		cout << form << endl;
 
 		bureaucrat.signForm(form);
