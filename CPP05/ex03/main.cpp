@@ -11,6 +11,7 @@ int main()
 
 		man.signForm(*rrf);
 		rrf->execute(man);
+		
 		delete rrf;
 		delete unknownForm;
 	}
