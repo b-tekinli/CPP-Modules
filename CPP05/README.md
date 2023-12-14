@@ -46,3 +46,27 @@ int main() {
 ```
 
 Yukarıda *exception &e* şeklinde bir referans kullanıyoruz. Orada yakalanan istisnai hata durumu exception class'ından bir nesne türeterek aslında hata türü olduğunu belirtiyor. Aynı şekilde *what()* fonksiyonunu da *e.what()* ifadesi ile yakalanan hatanın açıklamasını ekrana yazdırmak için kullanıyoruz. Yani _e.what()_ ifadesi, istisna nesnesinin içerdiği hata mesajını döndürür. Örnekteki kodda, ekrana "Hata yakalandı: Sıfıra bölme hatası!" şeklinde bir çıktı verir.
+
+## c_str Nedir?
+
+Bir string sınıfının içerdiği karakter dizisini C-style string (null-terminated string) formatına dönüştüren bir fonksiyondur. Bu fonksiyon, C++'taki std::string sınıfının bir üye fonksiyonudur.
+
+Bir std::string nesnesini c_str() fonksiyonuyla C-style string'e dönüştürmek, const char* türünde bir pointer döndürür. Bu pointer, ilgili std::string nesnesinin içerdiği karakter dizisinin başlangıcını gösterir ve bu dizinin sonunda bir null karakter ('\0') bulunur.
+
+```cpp
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string myString = "Hello World!";
+    
+    const char* cStyleString = myString.c_str();
+    
+    std::cout << "C-style string: " << cStyleString << std::endl;
+
+    return 0;
+}
+```
+
+c_str fonksiyonunun döndürdüğü pointer, std::string nesnesi hayatta olduğu sürece geçerli olur.
+
