@@ -92,7 +92,7 @@ int main() {
     char* charPointer = reinterpret_cast<char*>(&intValue);
 
     for (int i = 0; i < sizeof(int); ++i) {
-        std::cout << i << "Byte: " << static_cast<int>(charPointer[i]) << std::endl;
+        std::cout << "Byte " << i << ": " << static_cast<int>(charPointer[i]) << std::endl;
     }
 
     return 0;
