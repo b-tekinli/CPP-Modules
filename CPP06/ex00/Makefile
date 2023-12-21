@@ -1,4 +1,4 @@
-NAME = Intern
+NAME = Convert
 
 SRCS = Convert.cpp main.cpp
 
