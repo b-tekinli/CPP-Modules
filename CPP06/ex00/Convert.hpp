@@ -1,25 +1,23 @@
-#ifndef CONVERT_HPP
-#define CONVERT_HPP
-
+#include <string>
 #include <iostream>
-#include <exception>
+#include <cstdlib>
+#include <cmath>
 
 class ScalarConverter
 {
-private:
-    static char toChar(const std::string &literal);
-    static int toInt(const std::string &literal);
-    static float toFloat(const std::string &literal);
-    static double toDouble(const std::string &literal);
+public:
+    ScalarConverter();
+    ~ScalarConverter();
+    ScalarConverter(const ScalarConverter &other);
+    ScalarConverter &operator=(const ScalarConverter &other);
 
     static bool isDisplayableChar(char c);
 
-public:
-    ScalarConverter();
-    ScalarConverter(const ScalarConverter &oth);
-    ~ScalarConverter();
+    static void convert(const std::string &input);
 
-    static void convert(const std::string &literal);
+private:
+    static char toChar(char value);
+    static int toInt(int value);
+    static float toFloat(float value);
+    static double toDouble(double value);
 };
-
-#endif
