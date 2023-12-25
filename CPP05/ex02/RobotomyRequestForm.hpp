@@ -12,6 +12,7 @@ private:
 	const string target;
 
 public:
+	RobotomyRequestForm();
 	RobotomyRequestForm(const string &target);
 	~RobotomyRequestForm();
 

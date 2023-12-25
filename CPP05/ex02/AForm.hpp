@@ -50,6 +50,15 @@ public:
 			return "Form grade is too low!";
 		}
 	};
+
+	class FormNotSignedException : public exception 
+	{
+	public:
+		virtual const char *what() const throw()
+		{
+			return "Form not signed.";
+		}
+	};
 };
 
 ostream &operator<<(ostream &os, const AForm &form);

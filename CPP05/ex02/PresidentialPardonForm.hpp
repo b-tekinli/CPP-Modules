@@ -9,8 +9,9 @@ private:
 	const string target;
 
 public:
+	PresidentialPardonForm();
 	PresidentialPardonForm(const string &target);
-	~PresidentialPardonForm();
+	~PresidentialPardonForm(); 
 
 	void execute(const Bureaucrat &executor) const;
 };

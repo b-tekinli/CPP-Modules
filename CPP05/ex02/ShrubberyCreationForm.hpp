@@ -11,6 +11,7 @@ private:
 	const string target;
 
 public:
+	ShrubberyCreationForm();
 	ShrubberyCreationForm(const string &target);
 	~ShrubberyCreationForm();
 

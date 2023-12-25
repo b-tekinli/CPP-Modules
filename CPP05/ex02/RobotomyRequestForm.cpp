@@ -1,5 +1,10 @@
 #include "RobotomyRequestForm.hpp"
 
+RobotomyRequestForm::RobotomyRequestForm() : AForm("Robotomy", 25, 5)
+{
+	return;
+}
+
 RobotomyRequestForm::RobotomyRequestForm(const string &target)
 	: AForm("Robotomy Request Form", 72, 45), target(target) {}
 
