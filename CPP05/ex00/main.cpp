@@ -2,9 +2,10 @@
 
 int main()
 {
+	Bureaucrat bureaucrat("Daryl", 3);
+	
 	try
 	{
-		Bureaucrat bureaucrat("Daryl", 3);
 		cout << bureaucrat << endl;
 
 		bureaucrat.incrementGrade();

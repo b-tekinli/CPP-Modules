@@ -43,6 +43,7 @@ public:
 			return "Bureaucrat grade is too high!";
 		}
 	};
+	
 	class GradeTooLowException : public exception
 	{
 		virtual const char *what() const throw()
