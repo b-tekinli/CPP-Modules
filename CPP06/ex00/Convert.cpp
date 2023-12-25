@@ -5,86 +5,72 @@ ScalarConverter::ScalarConverter() {}
 ScalarConverter::~ScalarConverter() {}
 
 ScalarConverter::ScalarConverter(const ScalarConverter &other) {
-    (void)other;
+    *this = other;
 }
 
-void ScalarConverter::convert(const std::string &literal) {
-    char c = toChar(literal);
-    int i = toInt(literal);
-    float f = toFloat(literal);
-    double d = toDouble(literal);
-
-    std::cout << "char: ";
-    if (c == '\0') {
-        std::cout << "impossible" << std::endl;
-    } else if (isDisplayableChar(c)) {
-        std::cout << "'" << c << "'" << std::endl;
-    } else {
-        std::cout << "Non displayable" << std::endl;
-    }
-
-    std::cout << "int: ";
-    if (i == 0 && literal != "0") {
-        std::cout << "impossible" << std::endl;
-    } else {
-        std::cout << i << std::endl;
-    }
-
-    std::cout << "float: ";
-    if (f == 0.0f && literal != "0.0f") {
-        std::cout << "impossible" << std::endl;
-    } else {
-        std::cout << f << "f" << std::endl;
-    }
-
-    std::cout << "double: ";
-    if (d == 0.0 && literal != "0.0") {
-        std::cout << "impossible" << std::endl;
-    } else {
-        std::cout << d << std::endl;
-    }
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other) {
+    return *this;
 }
 
-char ScalarConverter::toChar(const std::string &literal) {
-    if (literal.length() == 1) {
-        return literal[0];
-    } else if (literal == "0") {
-        std::cout << "Non displayable" << std::endl;
-        return '\0';
-    }
-
-    std::cout << "impossible" << std::endl;
-
-    return '\0';
-}
-
-int ScalarConverter::toInt(const std::string &literal) {
+void ScalarConverter::convert(const std::string &input) {
     try {
-        return static_cast<int>(std::stoi(literal));
-    } catch (...) {
-        std::cout << "impossible" << std::endl;
-        return 0;
+        char c = toChar(std::stoi(input));
+        std::cout << "char: " << "'" << c << "'" << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << "char: impossible" << std::endl;
+    }
+
+    try {
+        int i = toInt(std::stoi(input));
+        std::cout << "int: " << i << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << "int: impossible" << std::endl;
+    }
+
+    try {
+        float f = toFloat(std::stof(input));
+        std::cout << "float: " << f << (f == static_cast<int>(f) ? ".0f" : "f") << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << "float: impossible" << std::endl;
+    }
+
+    try {
+        double d = toDouble(std::stod(input));
+        std::cout << "double: " << d << (d == static_cast<int>(d) ? ".0" : "") << std::endl;
+    } catch (const std::exception &e) {
+        std::cout << "double: impossible" << std::endl;
     }
 }
 
-float ScalarConverter::toFloat(const std::string &literal) {
-    try {
-        return static_cast<float>(std::stof(literal));
-    } catch (...) {
-        std::cout << "impossible" << std::endl;
-        return 0.0f;
+char ScalarConverter::toChar(char value) {
+    if (!isDisplayableChar(value)) {
+        throw std::invalid_argument("Non displayable");
     }
+    return value;
 }
 
-double ScalarConverter::toDouble(const std::string &literal) {
-    try {
-        return std::stod(literal);
-    } catch (...) {
-        std::cout << "impossible" << std::endl;
-        return 0.0;
+int ScalarConverter::toInt(int value) {
+    return value;
+}
+
+float ScalarConverter::toFloat(float value) {
+    if (std::isnan(value)) {
+        return NAN;
+    } else if (std::isinf(value)) {
+        return value > 0 ? INFINITY : -INFINITY;
     }
+    return value;
+}
+
+double ScalarConverter::toDouble(double value) {
+    if (std::isnan(value)) {
+        return NAN;
+    } else if (std::isinf(value)) {
+        return value > 0 ? INFINITY : -INFINITY;
+    }
+    return value;
 }
 
 bool ScalarConverter::isDisplayableChar(char c) {
-    return (c > 32 && c <= 126);
+    return (c >= 32 && c <= 126);
 }
