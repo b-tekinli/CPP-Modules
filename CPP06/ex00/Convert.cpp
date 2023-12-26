@@ -14,7 +14,8 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other) {
 
 void ScalarConverter::convert(const std::string &input) {
     try {
-        char c = toChar(std::stoi(input));
+        int intValue = std::stoi(input);
+        char c = toChar(intValue);
         std::cout << "char: " << "'" << c << "'" << std::endl;
     } catch (const std::exception &e) {
         std::cout << "char: impossible" << std::endl;
@@ -42,11 +43,11 @@ void ScalarConverter::convert(const std::string &input) {
     }
 }
 
-char ScalarConverter::toChar(char value) {
-    if (!isDisplayableChar(value)) {
-        throw std::invalid_argument("Non displayable");
+char ScalarConverter::toChar(int value) {
+    if (!isDisplayableChar(static_cast<char>(value))) {
+        std::cout << "char: Non displayable\n";
     }
-    return value;
+    return static_cast<char>(value);
 }
 
 int ScalarConverter::toInt(int value) {
@@ -71,6 +72,6 @@ double ScalarConverter::toDouble(double value) {
     return value;
 }
 
-bool ScalarConverter::isDisplayableChar(char c) {
-    return (c >= 32 && c <= 126);
+bool ScalarConverter::isDisplayableChar(int value) {
+    return (value >= 32 && value <= 126);
 }
