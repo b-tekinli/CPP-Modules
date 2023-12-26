@@ -11,12 +11,12 @@ public:
     ScalarConverter(const ScalarConverter &other);
     ScalarConverter &operator=(const ScalarConverter &other);
 
-    static bool isDisplayableChar(char c);
+    static bool isDisplayableChar(int value);
 
     static void convert(const std::string &input);
 
 private:
-    static char toChar(char value);
+    static char toChar(int value);
     static int toInt(int value);
     static float toFloat(float value);
     static double toDouble(double value);
