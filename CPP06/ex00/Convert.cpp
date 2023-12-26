@@ -16,7 +16,6 @@ void ScalarConverter::convert(const std::string &input) {
     try {
         int intValue = std::stoi(input);
         char c = toChar(intValue);
-        std::cout << "char: " << "'" << c << "'" << std::endl;
     } catch (const std::exception &e) {
         std::cout << "char: impossible" << std::endl;
     }
@@ -44,10 +43,14 @@ void ScalarConverter::convert(const std::string &input) {
 }
 
 char ScalarConverter::toChar(int value) {
-    if (!isDisplayableChar(static_cast<char>(value))) {
+    char c = static_cast<char>(value);
+    if (!isDisplayableChar(c)) {
         std::cout << "char: Non displayable\n";
+    } else {
+        std::cout << "char: '" << c << "'" << std::endl;
     }
-    return static_cast<char>(value);
+    
+    return c;
 }
 
 int ScalarConverter::toInt(int value) {
