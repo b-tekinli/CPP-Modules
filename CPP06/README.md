@@ -150,7 +150,7 @@ int main() {
     ins2.counter();
     ins3.counter();
     
-    std::cout << "toplam türetilen nesne sayısı: " << Counter::count << std::endl;
+    std::cout << "Toplam türetilen nesne sayısı: " << Counter::count << std::endl;
 }
 ```
 
@@ -181,10 +181,9 @@ int main() {
     
     std::cout << "Kare Toplam: " << kareSonucu << std::endl;
 
-    Matematik matematikObjesi;
-    matematikObjesi.normalFonksiyon();
+    Matematik mat;
+    mat.normalFonksiyon();
 
     return (0);
 }
 ```
-
