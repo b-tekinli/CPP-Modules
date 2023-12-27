@@ -100,3 +100,91 @@ int main() {
 ```
 
 Yukarıdaki örnekte `int` veri tipindeki bir değişkeni `char *` veri tipine çeviriyoruz. Her karakterin bellek değerini ekrana yazdırıyoruz. Ancak dikkatli olmakta fayda var çünkü tür dönüşümü potansiyel olarak tanımsız davranışa neden olabilir.
+
+
+<br />
+
+
+### Static Değişken ve Static Fonksiyon nedir?
+
+Static değişkenin ne olduğuyla başlayalım önce. Static değişken, programın çalışma süresi boyunca 1 kez oluşturulan ve bellekte aynı konumu paylaşan değişkendir. Bir static değişken, tanımlandığı sınıfın tüm nesneleri arasında paylaşılabilir. Neden kullandığımıza gelirsek, genel olarak bir bir sınıfın tüm nesneleri arasında paylaşılan verileri tutmak için kullandığımızı söyleyebiliriz.
+
+```cpp
+#include <iostream>
+
+class Number {
+public:
+    static int num;
+};
+
+int Number::num = 4;
+
+int main() {
+
+    std::cout << "Sayı: " << Number::num << std::endl;
+
+    return 0;
+}
+```
+
+Yukarıdaki örnekte Number class'ının içinde num isimli bir static değişken oluşturduk. Bu değişkene `main()` fonksiyonu içinde Number class'ından bir nesne türetmeden direkt class üzerinden erişim sağladık. Belirli bir durumu saymak için mesela bir sınıftan kaç nesne türetildiğini saymak için kullanılabilir. Hatta bununla ilgili de bir örnek yapabiliriz:
+
+```cpp
+#include <iostream>
+
+class Counter {
+    public:
+        static int count;
+        
+        void counter() {
+            count++;
+        }
+};
+
+int Counter::count = 0;
+
+int main() {
+    Counter ins1, ins2, ins3;
+    
+    ins1.counter();
+    ins2.counter();
+    ins3.counter();
+    
+    std::cout << "toplam türetilen nesne sayısı: " << Counter::count << std::endl;
+}
+```
+
+Burada 3 tane nesne türetip her seferinde counter fonksiyonunu çalıştırdığımız için 3 tane nesne oluşturulduğunu izleyebiliyoruz. Hangi durumlarda kullanıp izleyeceğiniz algoritma tasarımınıza bağlı.
+
+
+<br />
+
+
+Static fonksiyon ise, sınıfın herhangi bir nesnesine bağlı olmayan ve sınıf adı ile direkt olarak çağrılabilen bir fonksiyondur. Static fonksiyonlar sadece static olan değişken ve fonksiyonlara erişebilirler. 
+
+```cpp
+#include <iostream>
+
+class Matematik {
+public:
+    static int kareToplami(int x, int y) {
+        return (x * x) + (y * y);
+    }
+
+    void normalFonksiyon() {
+        std::cout << "Normal fonksiyon" << std::endl;
+    }
+};
+
+int main() {
+    int kareSonucu = Matematik::kareToplami(3, 4);
+    
+    std::cout << "Kare Toplam: " << kareSonucu << std::endl;
+
+    Matematik matematikObjesi;
+    matematikObjesi.normalFonksiyon();
+
+    return (0);
+}
+```
+
