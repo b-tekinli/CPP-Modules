@@ -2,7 +2,7 @@
 
 Casts.
 
-## Casts Nedir?
+## Casts nedir?
 
 Basitçe bir veri tipini başka bir veri tipine dönüştürmemizi sağlayan operatörlerdir. Bir değişken veya ifadenin veri tipini cast etmemizi sağlar. 3 tane cast çeşidi vardır. Bunlar;
 1. static_cast
@@ -187,3 +187,16 @@ int main() {
     return (0);
 }
 ```
+
+
+<br />
+
+
+## Serialization ve Deserialization nedir?
+
+`Serialization`, bir nesnenin durumunu bir dizi bitlere (bu genelde bir dosya veya ağ üzerinden gönderilebilecek bir byte akışı olur) dönüştürme işlemidir.
+
+Daha açıklayıcı olması açısından mesela bir oyunda yeteri kadar ilerleme kat ettikten sonra bulunduğumuz durumu kaydetmek isteyebiliyoruz. Bu durumda oyundaki tüm nesneler, puanlar, ve karakterleri bir dosyaya yazıyoruz. Buna **serialization** deniyor.
+
+`Deserialization` ise bunun tam aksi durumu. Bir byte akışını alır ve orijinal nesneyi yeniden oluşturur. Yine oyun örneği üzerinden gidecek olursak, kaydettiğimiz oyunu tekrar kaldığımız yerden devam ettirmek için yüklediğimiz zaman bu da **deserialization** oluyor.
+
