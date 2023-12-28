@@ -200,3 +200,9 @@ Daha açıklayıcı olması açısından mesela bir oyunda yeteri kadar ilerleme
 
 `Deserialization` ise bunun tam aksi durumu. Bir byte akışını alır ve orijinal nesneyi yeniden oluşturur. Yine oyun örneği üzerinden gidecek olursak, kaydettiğimiz oyunu tekrar kaldığımız yerden devam ettirmek için yüklediğimiz zaman bu da **deserialization** oluyor.
 
+Bu modül özelinde `uintptr_t` yapısı kullanılıyor ve bu da herhangi bir `(void *)` değerini bu tipe dönüştürüp ardından geri dönüştürebilen bir unsigned int tipidir.
+
+`serialize()` fonksiyonu, **t_data** pointer'ını **uintptr_t** türüne dönüştürür. Bu, pointer'ın hafızadaki konumunu bir int değeri olarak saklar.
+
+`deserialize()` fonksiyonu ise tam tersini yapar. Bir **uintptr_t** değerini alır ve bu değeri **t_data** pointer'ına dönüştürür.
+
