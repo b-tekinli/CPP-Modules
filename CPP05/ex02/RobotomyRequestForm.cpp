@@ -20,6 +20,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 
 	cout << "Drilling noises..." << endl;
 
+	srand(time(0));
 	if (rand() % 2 == 0)
 		cout << target << " has been robotomized successfully." << endl;
 	else
