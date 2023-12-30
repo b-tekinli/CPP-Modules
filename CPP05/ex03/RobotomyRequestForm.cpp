@@ -14,6 +14,8 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 		throw AForm::GradeTooLowException();
 
 	cout << "Drilling noises..." << endl;
+
+	srand(time(0));
 	if (time(NULL) % 2 == 0)
 		cout << target << " has been robotomized successfully." << endl;
 	else
