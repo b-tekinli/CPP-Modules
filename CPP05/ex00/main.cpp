@@ -6,19 +6,19 @@ int main()
 	
 	try
 	{
-		cout << bureaucrat << endl;
+		std::cout << bureaucrat << std::endl;
 
 		bureaucrat.incrementGrade();
-		cout << bureaucrat << endl;
+		std::cout << bureaucrat << std::endl;
 
 		bureaucrat.decrementGrade();
-		cout << bureaucrat << endl;
+		std::cout << bureaucrat << std::endl;
 
 		Bureaucrat invalidBureaucrat("Rick", 0);
 	}
-	catch (const exception &e)
+	catch (const std::exception &e)
 	{
-		cout << "Exception caught: " << e.what() << endl;
+		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
 	return (0);
 }

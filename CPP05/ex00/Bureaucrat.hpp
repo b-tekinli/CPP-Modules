@@ -5,21 +5,15 @@
 #include <string>
 #include <exception>
 
-using std::cout;
-using std::endl;
-using std::exception;
-using std::ostream;
-using std::string;
-
 class Bureaucrat
 {
 private:
-	string name;
+	std::string name;
 	int grade;
 
 public:
 	Bureaucrat();
-	Bureaucrat(const string name, int grade);
+	Bureaucrat(const std::string name, int grade);
 	Bureaucrat(const Bureaucrat &oth);
 	~Bureaucrat();
 
@@ -29,14 +23,14 @@ public:
 	Bureaucrat operator++(int);
 	Bureaucrat operator--(int);
 
-	string const getName() const;
+	std::string const getName() const;
 	int getGrade() const;
 	void setGrade(int grade);
 
 	void incrementGrade();
 	void decrementGrade();
 
-	class GradeTooHighException : public exception
+	class GradeTooHigh : public std::exception
 	{
 		virtual const char *what() const throw()
 		{
@@ -44,7 +38,7 @@ public:
 		}
 	};
 	
-	class GradeTooLowException : public exception
+	class GradeTooLow : public std::exception
 	{
 		virtual const char *what() const throw()
 		{
@@ -53,6 +47,6 @@ public:
 	};
 };
 
-ostream &operator<<(ostream &os, const Bureaucrat &oth);
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &oth);
 
 #endif
