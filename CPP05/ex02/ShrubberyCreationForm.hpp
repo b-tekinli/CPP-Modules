@@ -2,17 +2,15 @@
 #define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
-using std::ofstream;
-using std::runtime_error;
 
 class ShrubberyCreationForm : public AForm
 {
 private:
-	const string target;
+	const std::string target;
 
 public:
 	ShrubberyCreationForm();
-	ShrubberyCreationForm(const string &target);
+	ShrubberyCreationForm(const std::string &target);
 	~ShrubberyCreationForm();
 
 	void execute(const Bureaucrat &executor) const;
