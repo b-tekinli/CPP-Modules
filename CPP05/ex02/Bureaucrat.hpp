@@ -6,35 +6,29 @@
 #include <exception>
 #include "AForm.hpp"
 
-using std::cout;
-using std::endl;
-using std::exception;
-using std::ostream;
-using std::string;
-
 class AForm;
 
 class Bureaucrat
 {
 private:
-	const string name;
+	const std::string name;
 	int grade;
 
 public:
 	Bureaucrat();
 	Bureaucrat(const Bureaucrat &oth);
-	Bureaucrat(const string &name, int grade);
+	Bureaucrat(const std::string &name, int grade);
 	~Bureaucrat();
 
 	Bureaucrat &operator=(const Bureaucrat &oth);
-	const string &getName() const;
+	const std::string &getName() const;
 	int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();
 	void signForm(AForm &form) const;
 	void executeForm(const AForm &form) const;
 
-	class GradeTooHighException : public exception
+	class GradeTooHigh : public std::exception
 	{
 	public:
 		virtual const char *what() const throw()
@@ -43,7 +37,7 @@ public:
 		}
 	};
 
-	class GradeTooLowException : public exception
+	class GradeTooLow : public std::exception
 	{
 	public:
 		virtual const char *what() const throw()
@@ -53,6 +47,6 @@ public:
 	};
 };
 
-ostream &operator<<(ostream &os, const Bureaucrat &bureaucrat);
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
 
 #endif

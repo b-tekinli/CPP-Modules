@@ -9,23 +9,19 @@
 
 class Bureaucrat;
 
-using std::exception;
-using std::ostream;
-using std::string;
-
 class AForm
 {
 private:
-	const string name;
+	const std::string name;
 	bool sign;
 	const int signGrade;
 	const int executeGrade;
 
 public:
-	AForm(const string &name, int signGrade, int executeGrade);
+	AForm(const std::string &name, int signGrade, int executeGrade);
 	virtual ~AForm();
 
-	const string &getName() const;
+	const std::string &getName() const;
 	bool isSigned() const;
 	int getSignGrade() const;
 	int getExecuteGrade() const;
@@ -33,7 +29,7 @@ public:
 
 	virtual void execute(const Bureaucrat &executor) const = 0;
 
-	class GradeTooHighException : public exception
+	class GradeTooHigh : public std::exception
 	{
 	public:
 		virtual const char *what() const throw()
@@ -42,7 +38,7 @@ public:
 		}
 	};
 
-	class GradeTooLowException : public exception
+	class GradeTooLow : public std::exception
 	{
 	public:
 		virtual const char *what() const throw()
@@ -51,7 +47,7 @@ public:
 		}
 	};
 
-	class FormNotSignedException : public exception 
+	class FormNotSigned : public std::exception 
 	{
 	public:
 		virtual const char *what() const throw()
@@ -61,6 +57,6 @@ public:
 	};
 };
 
-ostream &operator<<(ostream &os, const AForm &form);
+std::ostream &operator<<(std::ostream &os, const AForm &form);
 
 #endif

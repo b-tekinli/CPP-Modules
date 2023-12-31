@@ -21,9 +21,9 @@ int main()
 		bureaucrat.executeForm(robotomyForm);
 		bureaucrat.executeForm(pardonForm);
 	}
-	catch (const exception &e)
+	catch (const std::exception &e)
 	{
-		cout << "Exception occurred: " << e.what() << endl;
+		std::cout << "Exception occurred: " << e.what() << std::endl;
 	}
 
 	return (0);
