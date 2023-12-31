@@ -3,12 +3,12 @@
 
 Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150) {}
 
-Bureaucrat::Bureaucrat(const string name, int grade) : name(name)
+Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 {
 	if (grade < 1)
-		throw GradeTooHighException();
+		throw GradeTooHigh();
 	else if (grade > 150)
-		throw GradeTooLowException();
+		throw GradeTooLow();
 
 	this->grade = grade;
 }
@@ -42,7 +42,7 @@ Bureaucrat &Bureaucrat::operator--()
 Bureaucrat Bureaucrat::operator++(int)
 {
 	if (grade >= 150)
-		throw Bureaucrat::GradeTooHighException();
+		throw Bureaucrat::GradeTooHigh();
 
 	Bureaucrat temp = *this;
 	++*this;
@@ -53,7 +53,7 @@ Bureaucrat Bureaucrat::operator++(int)
 Bureaucrat Bureaucrat::operator--(int)
 {
 	if (grade <= 1)
-		throw Bureaucrat::GradeTooLowException();
+		throw Bureaucrat::GradeTooLow();
 
 	Bureaucrat temp = *this;
 	--*this;
@@ -61,7 +61,7 @@ Bureaucrat Bureaucrat::operator--(int)
 	return (temp);
 }
 
-string const Bureaucrat::getName() const { return (name); }
+std::string const Bureaucrat::getName() const { return (name); }
 
 int Bureaucrat::getGrade() const { return (grade); }
 
@@ -69,12 +69,12 @@ void Bureaucrat::setGrade(int grade) { this->grade = grade; }
 
 void Bureaucrat::incrementGrade()
 {
-	grade <= 1 ? throw GradeTooHighException() : grade--;
+	grade <= 1 ? throw GradeTooHigh() : grade--;
 }
 
 void Bureaucrat::decrementGrade()
 {
-	grade >= 150 ? throw GradeTooLowException() : grade++;
+	grade >= 150 ? throw GradeTooLow() : grade++;
 }
 
 void Bureaucrat::signForm(Form &form)
@@ -82,15 +82,15 @@ void Bureaucrat::signForm(Form &form)
 	try
 	{
 		form.beSigned(*this);
-		cout << *this << " signs " << form << endl;
+		std::cout << *this << " signs " << form << std::endl;
 	}
-	catch (const exception &e)
+	catch (const std::exception &e)
 	{
-		cout << *this << " couldn't sign " << form << " because " << e.what() << endl;
+		std::cout << *this << " couldn't sign " << form << " because " << e.what() << std::endl;
 	}
 }
 
-ostream &operator<<(ostream &os, const Bureaucrat &oth)
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &oth)
 {
 	os << oth.getName() << ", bureaucrat grade " << oth.getGrade();
 	return os;

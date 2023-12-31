@@ -3,18 +3,18 @@
 
 Form::Form() : name("Form"), signedStatus(false), signGrade(1), executeGrade(1) {}
 
-Form::Form(const string &name, int signGrade, int executeGrade)
+Form::Form(const std::string &name, int signGrade, int executeGrade)
 	: name(name), signedStatus(false), signGrade(signGrade), executeGrade(executeGrade)
 {
 	if (signGrade < 1 || executeGrade < 1)
-		throw GradeTooHighException();
+		throw GradeTooHigh();
 	else if (signGrade > 150 || executeGrade > 150)
-		throw GradeTooLowException();
+		throw GradeTooLow();
 }
 
 Form::~Form() {}
 
-string Form::getName() const { return name; }
+std::string Form::getName() const { return name; }
 
 bool Form::isSigned() const { return signedStatus; }
 
@@ -27,12 +27,12 @@ void Form::setSigned(bool signedStatus) { this->signedStatus = signedStatus; }
 void Form::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (!signedStatus)
-		bureaucrat.getGrade() <= signGrade ? signedStatus = true : throw GradeTooLowException();
+		bureaucrat.getGrade() <= signGrade ? signedStatus = true : throw GradeTooLow();
 	else
-		throw GradeTooHighException();
+		throw GradeTooHigh();
 }
 
-ostream &operator<<(ostream &os, const Form &form)
+std::ostream &operator<<(std::ostream &os, const Form &form)
 {
 	os << "Form: " << form.getName() << ", Signed: " << (form.isSigned() ? "Yes" : "No") << ", Sign Grade: " << form.getSignGrade()
 	   << ", Execute Grade: " << form.getExecuteGrade();

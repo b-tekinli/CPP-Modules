@@ -6,23 +6,23 @@ int main()
 	try
 	{
 		Bureaucrat bureaucrat("Daryl", 75);
-		cout << bureaucrat << endl;
+		std::cout << bureaucrat << std::endl;
 
 		Form form("Presidental Pardon Form", 75, 100);
-		cout << form << endl;
+		std::cout << form << std::endl;
 
 		bureaucrat.signForm(form);
-		cout << form << endl;
+		std::cout << form << std::endl;
 
 		bureaucrat.decrementGrade();
-		cout << bureaucrat << endl;
+		std::cout << bureaucrat << std::endl;
 
 		bureaucrat.signForm(form);
-		cout << form << endl;
+		std::cout << form << std::endl;
 	}
-	catch (const exception &e)
+	catch (const std::exception &e)
 	{
-		cout << "Exception: " << e.what() << endl;
+		std::cout << "Exception: " << e.what() << std::endl;
 	}
 
 	return (0);

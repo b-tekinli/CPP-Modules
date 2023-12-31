@@ -6,17 +6,17 @@
 class Form
 {
 private:
-	const string name;
+	const std::string name;
 	bool signedStatus;
 	const int signGrade;
 	const int executeGrade;
 
 public:
 	Form();
-	Form(const string &name, int signGrade, int executeGrade);
+	Form(const std::string &name, int signGrade, int executeGrade);
 	~Form();
 
-	class GradeTooHighException : public exception
+	class GradeTooHigh : public std::exception
 	{
 		virtual const char *what() const throw()
 		{
@@ -24,7 +24,7 @@ public:
 		}
 	};
 
-	class GradeTooLowException : public exception
+	class GradeTooLow : public std::exception
 	{
 		virtual const char *what() const throw()
 		{
@@ -32,7 +32,7 @@ public:
 		}
 	};
 
-	string getName() const;
+	std::string getName() const;
 	int getExecuteGrade() const;
 	bool isSigned() const;
 	int getSignGrade() const;
@@ -40,6 +40,6 @@ public:
 	void beSigned(const Bureaucrat &bureaucrat);
 };
 
-ostream &operator<<(ostream &os, const Form &form);
+std::ostream &operator<<(std::ostream &os, const Form &form);
 
 #endif
