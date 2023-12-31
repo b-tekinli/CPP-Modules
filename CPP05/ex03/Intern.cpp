@@ -7,9 +7,9 @@ Intern::Intern() {}
 
 Intern::~Intern() {}
 
-AForm *Intern::makeForm(const string &AFormName, const string &target) const
+AForm *Intern::makeForm(const std::string &AFormName, const std::string &target) const
 {
-	string AFormNames[3] = {
+	std::string AFormNames[3] = {
 		"shrubbery",
 		"robotomy",
 		"presidential"};
@@ -31,9 +31,9 @@ AForm *Intern::makeForm(const string &AFormName, const string &target) const
 		tmp = new PresidentialPardonForm(target);
 		break;
 	default:
-		throw Intern::InvalidAFormException();
+		throw Intern::InvalidAForm();
 	}
-	cout << "Intern creates " << AFormName << endl;
+	std::cout << "Intern creates " << AFormName << std::endl;
 
 	return (tmp);
 }

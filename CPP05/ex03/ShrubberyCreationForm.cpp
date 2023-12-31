@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const string &target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 	: AForm("Shrubbery Creation Form", 145, 137), target(target) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
@@ -8,13 +8,13 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
 	if (!isSigned())
-		throw AForm::GradeTooLowException();
+		throw AForm::GradeTooLow();
 
 	if (executor.getGrade() > getExecuteGrade())
-		throw AForm::GradeTooLowException();
+		throw AForm::GradeTooLow();
 
-	string str = target + "_shrubbery";
-	ofstream outputFile(str.c_str());
+	std::string str = target + "_shrubbery";
+	std::ofstream outputFile(str.c_str());
 
 	if (outputFile)
 	{
@@ -36,10 +36,10 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 					  "            „{) o\\ \n"
 				   << std::endl;
 		outputFile.close();
-		cout << "Shrubbery created for " << target << "." << endl;
+		std::cout << "Shrubbery created for " << target << "." << std::endl;
 	}
 	else
 	{
-		throw runtime_error("Failed to create shrubbery file for " + target + ".");
+		throw std::runtime_error("Failed to create shrubbery file for " + target + ".");
 	}
 }

@@ -10,10 +10,10 @@ class Bureaucrat;
 class RobotomyRequestForm : public AForm
 {
 private:
-	const string target;
+	const std::string target;
 
 public:
-	RobotomyRequestForm(const string &target);
+	RobotomyRequestForm(const std::string &target);
 	~RobotomyRequestForm();
 
 	void execute(const Bureaucrat &executor) const;

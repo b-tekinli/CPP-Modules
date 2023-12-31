@@ -9,9 +9,9 @@ public:
 	Intern();
 	~Intern();
 
-	AForm *makeForm(const string &formName, const string &formTarget) const;
+	AForm *makeForm(const std::string &formName, const std::string &formTarget) const;
 
-	class InvalidAFormException : public exception
+	class InvalidAForm : public std::exception
 	{
 	public:
 		virtual const char *what() const throw()

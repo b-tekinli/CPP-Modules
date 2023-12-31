@@ -6,10 +6,10 @@
 class PresidentialPardonForm : public AForm
 {
 private:
-	const string target;
+	const std::string target;
 
 public:
-	PresidentialPardonForm(const string &target);
+	PresidentialPardonForm(const std::string &target);
 	~PresidentialPardonForm();
 
 	void execute(const Bureaucrat &executor) const;

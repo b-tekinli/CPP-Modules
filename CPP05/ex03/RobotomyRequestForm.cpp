@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const string &target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 	: AForm("Robotomy Request Form", 72, 45), target(target) {}
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
@@ -8,16 +8,16 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	if (!isSigned())
-		throw AForm::GradeTooLowException();
+		throw AForm::GradeTooLow();
 
 	if (executor.getGrade() > getExecuteGrade())
-		throw AForm::GradeTooLowException();
+		throw AForm::GradeTooLow();
 
-	cout << "Drilling noises..." << endl;
+	std::cout << "Drilling noises..." << std::endl;
 
 	srand(time(0));
 	if (time(NULL) % 2 == 0)
-		cout << target << " has been robotomized successfully." << endl;
+		std::cout << target << " has been robotomized successfully." << std::endl;
 	else
-		cout << "Robotomy failed for " << target << "." << endl;
+		std::cout << "Robotomy failed for " << target << "." << std::endl;
 }
