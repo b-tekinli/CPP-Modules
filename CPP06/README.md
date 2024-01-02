@@ -194,11 +194,11 @@ int main() {
 
 ## Serialization ve Deserialization nedir?
 
-`Serialization`, bir nesnenin durumunu bir dizi bitlere (bu genelde bir dosya veya ağ üzerinden gönderilebilecek bir byte akışı olur) dönüştürme işlemidir.
+`Serialization`, bir nesneyi diskte saklanacak veya bir ağ üzerinden başka bir bilgisayara gönderilecek bir bayt akışına dönüştürme işlemidir.
 
-Daha açıklayıcı olması açısından mesela bir oyunda yeteri kadar ilerleme kat ettikten sonra bulunduğumuz durumu kaydetmek isteyebiliyoruz. Bu durumda oyundaki tüm nesneler, puanlar, ve karakterleri bir dosyaya yazıyoruz. Buna **serialization** deniyor.
+Daha açıklayıcı olması açısından mesela bir oyunda yeteri kadar ilerleme kat ettikten sonra bulunduğumuz durumu kaydetmek isteyebiliyoruz. Bu durumda oyundaki tüm nesneler, puanlar, ve karakterlerin mevcut pozisyonlarını bir dosyaya yazıyoruz. Buna **serialization** deniyor.
 
-`Deserialization` ise bunun tam aksi durumu. Bir byte akışını alır ve orijinal nesneyi yeniden oluşturur. Yine oyun örneği üzerinden gidecek olursak, kaydettiğimiz oyunu tekrar kaldığımız yerden devam ettirmek için yüklediğimiz zaman bu da **deserialization** oluyor.
+`Deserialization` ise bunun tam aksi durumu. Bir byte akışını alır ve orijinal nesneyi yeniden oluşturur. Yani diskten veya ağdan bir dosya olarak serileştirilmiş nesne, kullanılmak üzere bilgisayardaki nesneye geri dönüştürülebilir (yeniden canlandırılabilir). Yine oyun örneği üzerinden gidecek olursak, kaydettiğimiz oyunu tekrar kaldığımız yerden devam ettirmek için yüklediğimiz zaman bu da **deserialization** oluyor.
 
 Bu modül özelinde `uintptr_t` yapısı kullanılıyor ve bu da herhangi bir `(void *)` değerini bu tipe dönüştürüp ardından geri dönüştürebilen bir unsigned int tipidir.
 
