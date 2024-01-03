@@ -20,5 +20,6 @@ int main()
 	{
 		std::cout << "Exception caught: " << e.what() << std::endl;
 	}
+
 	return (0);
 }
