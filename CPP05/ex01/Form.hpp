@@ -3,6 +3,8 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 private:
@@ -27,12 +29,12 @@ public:
 
 	class GradeTooHighException : public std::exception
 	{
-		virtual const char *what() const throw() {}
+		virtual const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
-		virtual const char *what() const throw() {}
+		virtual const char *what() const throw();
 	};
 };
 
