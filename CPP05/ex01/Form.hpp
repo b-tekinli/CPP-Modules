@@ -14,30 +14,26 @@ private:
 public:
 	Form();
 	Form(const std::string &name, int signGrade, int executeGrade);
+	Form(const Form &oth);
+	Form &operator=(const Form &oth);
 	~Form();
 
-	class GradeTooHigh : public std::exception
-	{
-		virtual const char *what() const throw()
-		{
-			return "Form grade is too high!";
-		}
-	};
-
-	class GradeTooLow : public std::exception
-	{
-		virtual const char *what() const throw()
-		{
-			return "Form grade is too low!";
-		}
-	};
-
 	std::string getName() const;
-	int getExecuteGrade() const;
 	bool isSigned() const;
+	int getExecuteGrade() const;
 	int getSignGrade() const;
-	void setSigned(bool signedStatus);
+
 	void beSigned(const Bureaucrat &bureaucrat);
+
+	class GradeTooHighException : public std::exception
+	{
+		virtual const char *what() const throw() {}
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+		virtual const char *what() const throw() {}
+	};
 };
 
 std::ostream &operator<<(std::ostream &os, const Form &form);
