@@ -1,69 +1,39 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : name("Bureaucrat"), grade(150) {}
-
-Bureaucrat::Bureaucrat(const Bureaucrat &oth) : name(oth.name), grade(oth.grade) {}
+Bureaucrat::Bureaucrat()
+{
+	std::cout << "Bureaucrat default constructor called.\n";
+}
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name)
 {
 	if (grade < 1)
-		throw GradeTooHigh();
+		throw GradeTooHighException();
 	else if (grade > 150)
-		throw GradeTooLow();
+		throw GradeTooLowException();
 
 	this->grade = grade;
 }
+
+Bureaucrat::Bureaucrat(const Bureaucrat &oth) : name(oth.getName()), grade(oth.getGrade()) {}
 
 Bureaucrat::~Bureaucrat() {}
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &oth)
 {
-	this->name = oth.name;
-	this->grade = oth.grade;
+	this->grade = oth.getGrade();
+
 	return (*this);
 }
 
-Bureaucrat &Bureaucrat::operator++()
-{
-	this->grade++;
-	return (*this);
-}
-
-Bureaucrat &Bureaucrat::operator--()
-{
-	this->grade--;
-	return (*this);
-}
-
-Bureaucrat Bureaucrat::operator++(int)
-{
-	if (grade >= 150)
-		throw GradeTooLow();
-	Bureaucrat temp = *this;
-	++*this;
-
-	return (temp);
-}
-
-Bureaucrat Bureaucrat::operator--(int)
-{
-	if (grade <= 1)
-		throw GradeTooHigh();
-	Bureaucrat temp = *this;
-	--*this;
-	return (temp);
-}
-
-std::string const Bureaucrat::getName() const { return (name); }
+std::string Bureaucrat::getName() const { return (name); }
 
 int Bureaucrat::getGrade() const { return (grade); }
-
-void Bureaucrat::setGrade(int grade) { this->grade = grade; }
 
 void Bureaucrat::incrementGrade()
 {
 	if (grade <= 1)
-		throw GradeTooHigh();
+		throw GradeTooHighException();
 	else
 		grade--;
 }
@@ -71,9 +41,19 @@ void Bureaucrat::incrementGrade()
 void Bureaucrat::decrementGrade()
 {
 	if (grade >= 150)
-		throw GradeTooLow();
+		throw GradeTooLowException();
 	else
 		grade++;
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Bureaucrat grade is too high!\n";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Bureaucrat grade is too low!\n";
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &oth)

@@ -2,7 +2,7 @@
 
 int main()
 {
-	Bureaucrat bureaucrat("Daryl", 3);
+	Bureaucrat bureaucrat("Daryl", 12);
 	
 	try
 	{
