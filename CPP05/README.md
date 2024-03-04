@@ -52,7 +52,7 @@ Yukarıda *exception &e* şeklinde bir referans kullanıyoruz. Orada yakalanan i
 
 ## Exception Hiyerarşisi
 
-İlk yakaladığı hatayı aynı _if - else if_ mantığı ile ilk catch bloğunda arar eğer bulamazsa bir sonrakine bakarak devam eder. İlkinde bulursa diğer catch bloklarına bakmaz.
+İlk yakaladığı hatayı aynı _if - else if_ mantığı gibi ilk catch bloğunda arar eğer bulamazsa bir sonrakine bakarak devam eder. İlkinde bulursa diğer catch bloklarına bakmaz.
 
 ```cpp
 #include <iostream>
