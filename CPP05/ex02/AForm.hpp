@@ -19,7 +19,7 @@ public:
     AForm(const string fName, const int grToSign, const int grToExec);
     AForm(const AForm &obj);
     AForm &operator=(const AForm &obj);
-    ~AForm();
+    virtual ~AForm();
 
     string getName() const;
     bool getIsSigned() const;
