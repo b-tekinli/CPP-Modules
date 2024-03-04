@@ -21,6 +21,8 @@ Exceptions aslında istisnai durumlar demektir. Yani program normal akışında 
 #include <iostream>
 #include <exception>
 
+using std::runtime_error, exception, cout, endl;
+
 int divide(int a, int b) {
     if (b == 0) {
         throw runtime_error("Sıfıra bölme hatası!");
@@ -38,7 +40,7 @@ int main() {
         cout << "Hata yakalandı: " << e.what() << endl;
     }
 
-    cout << "Program devam ediyor." << endl;
+    cout << "Program devam ediyor.\n";
 
     return 0;
 }
