@@ -1,47 +1,57 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Shrubbery", 25, 5) {}
+ShrubberyCreationForm::ShrubberyCreationForm()
+{
+    cout << "Shrubbery default constructor" << endl;
+}
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	: AForm("Shrubbery Creation Form", 145, 137), target(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const string &tar) : AForm("Shrubbery Creation Form", 145, 137), target(tar)
+{
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm("Shrubbery Creation Form", 145, 137)
+{
+    *this = obj;
+}
+
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &obj)
+{
+    this->target = obj.target;
+    return *this;
+}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
-void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-	if (!isSigned())
-		throw AForm::GradeTooLow();
+    if (!getIsSigned())
+    {
+        throw AForm::GradeTooLowException();
+    }
 
-	if (executor.getGrade() > getExecuteGrade())
-		throw AForm::GradeTooHigh();
+    if (executor.getGrade() > getGradeToExecute())
+        throw AForm::GradeTooLowException();
 
-	std::string str = target + "_shrubbery";
-	std::ofstream outputFile(str.c_str());
+    string str = target + "_shrubbery";
+    std::ofstream outputFile(str.c_str());
 
-	if (outputFile)
-	{
-		outputFile << "                    \\\n"
-					  "          |         |\n"
-					  "          |       \\ /\\ \n"
-					  "   _ .     \\   „;=`y   .   |\n"
-					  " .⁻⁻> \\«  ` |  `: /”» '   /\\ \n"
-					  ". ,/ `\\;`.  `=„\\`/; „='  ”.='    |\n"
-					  " '   , =\\;` /, =”;„  ==./--=.”» /\n"
-					  "    '     \\\\`v  8/,”-./ ``  ,-`/--'\n"
-					  "           \\\\\\|//  ` v__,=”   \\ \n"
-					  "            \\\\y¡' _,/,<='      \n"
-					  "             \\8|y',-'  ``\\ \n"
-					  "             |{ o/\\\n"
-					  "             |) |\n"
-					  "             |; |\n"
-					  "             |; |\n"
-					  "            „{) o\\ \n"
-				   << std::endl;
-		outputFile.close();
-		std::cout << "Shrubbery created for " << target << "." << std::endl;
-	}
-	else
-	{
-		throw std::runtime_error("Failed to create shrubbery file for " + target + ".");
-	}
+    if (outputFile.is_open())
+    {
+        outputFile << "          &&& &&  & &&\n";
+        outputFile << "      && &//&||& ()|/ @, &&\n";
+        outputFile << "      &//(/&/&||/& /_/)_&/_&\n";
+        outputFile << "   &() &//&|()|/&/// '%' & ()\n";
+        outputFile << "  &_/_&&_/ |& |&&/&__%_/_& &&\n";
+        outputFile << "&&   && & &| &| /& & % ()& /&&\n";
+        outputFile << " ()&_---()&/&/|&&-&&--%---()~\n";
+        outputFile << "     &&     /|||\n";
+        outputFile << "             |||\n";
+        outputFile << "             |||\n";
+        outputFile << "             |||\n";
+        outputFile << "       , -=-~  .-^- _\n";
+        outputFile.close();
+        cout << "Shrubbery created for " << target << "." << endl;
+    }
+    else
+        cout << "Errorrr" << endl;
 }

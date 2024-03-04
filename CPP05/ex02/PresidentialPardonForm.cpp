@@ -1,21 +1,34 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("Pardon Form", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm()
 {
-	return;
+	cout << "default constructor called" << endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
-	: AForm("Presidential Pardon Form", 25, 5), target(target) {}
+PresidentialPardonForm::PresidentialPardonForm(const string &tar) : AForm("Presidental Pardon Form", 25, 5), target(tar)
+{
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : AForm("Presidental Pardon Form", 25, 5)
+{
+	*this = obj;
+}
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &obj)
+{
+	*this = obj;
+	return *this;
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const
+{
+
+	if (!getIsSigned())
+		throw AForm::GradeTooLowException();
+
+	if (executor.getGrade() > getGradeToExecute())
+		throw AForm::GradeTooLowException();
+	cout << target << " has been pardoned by Zafod Beeblebrox." << endl;
+}
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
-
-void PresidentialPardonForm::execute(const Bureaucrat &executor) const
-{
-	if (!isSigned())
-		throw AForm::GradeTooLow();
-	if (executor.getGrade() > getExecuteGrade())
-		throw AForm::GradeTooHigh();
-
-	std::cout << target << "has been pardoned by Zaphod Beeblebrox.\n";
-}

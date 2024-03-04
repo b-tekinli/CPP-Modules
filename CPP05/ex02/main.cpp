@@ -5,26 +5,26 @@
 
 int main()
 {
-	try
-	{
-		Bureaucrat bureaucrat("Darly", 40);
+    try
+    {
+        Bureaucrat bureaucrat("Darly", 3);
+        ShrubberyCreationForm shrubberyForm("home");
 
-		PresidentialPardonForm pardonForm("Maggie");
-		RobotomyRequestForm robotomyForm("Jesus");
-		ShrubberyCreationForm shrubberyForm("home");
+        bureaucrat.signForm(shrubberyForm);
+        bureaucrat.executeForm(shrubberyForm);
 
-		bureaucrat.signForm(shrubberyForm);
-		bureaucrat.signForm(robotomyForm);
-		bureaucrat.signForm(pardonForm);
+        RobotomyRequestForm robotomyForm("Jesus");
+        bureaucrat.signForm(robotomyForm);
+        bureaucrat.executeForm(robotomyForm);
 
-		bureaucrat.executeForm(shrubberyForm);
-		bureaucrat.executeForm(robotomyForm);
-		bureaucrat.executeForm(pardonForm);
-	}
-	catch (const std::exception &e)
-	{
-		std::cout << "Exception occurred: " << e.what() << std::endl;
-	}
+        PresidentialPardonForm pardonForm("Maggie");
+        bureaucrat.signForm(pardonForm);
+        bureaucrat.executeForm(pardonForm);
+    }
+    catch (const std::exception &e)
+    {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
 
-	return (0);
+    return (0);
 }
