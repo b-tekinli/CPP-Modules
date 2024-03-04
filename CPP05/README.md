@@ -49,6 +49,58 @@ int main() {
 
 Yukarıda *exception &e* şeklinde bir referans kullanıyoruz. Orada yakalanan istisnai hata durumu exception class'ından bir nesne türeterek aslında hata türü olduğunu belirtiyor. Aynı şekilde *what()* fonksiyonunu da *e.what()* ifadesi ile yakalanan hatanın açıklamasını ekrana yazdırmak için kullanıyoruz. Yani _e.what()_ ifadesi, istisna nesnesinin içerdiği hata mesajını döndürür. Örnekteki kodda, ekrana "Hata yakalandı: Sıfıra bölme hatası!" şeklinde bir çıktı verir.
 
+
+## Exception Hiyerarşisi
+
+İlk yakaladığı hatayı aynı _if - else if_ mantığı ile ilk catch bloğunda arar eğer bulamazsa bir sonrakine bakarak devam eder. İlkinde bulursa diğer catch bloklarına bakmaz.
+
+```cpp
+#include <iostream>
+#include <exception>
+
+int main() 
+{
+    try {
+        int a = 12;
+        int b = 0;
+        
+        if(a >= 0 && a <= 20) 
+        {
+            if(b == 0) {
+                throw std::runtime_error("sifira bolme hatasi!");
+                std::cout << "test\n";
+            }
+            else {
+                int c = a / b;
+                std::cout << "result: " << c << std::endl;
+            }
+        }
+        else {
+            throw std::invalid_argument("gecersiz arguman!");
+        }
+        
+        std::cout << "test 2\n";
+    } 
+    catch (const std::invalid_argument &e) {
+        std::cout << "invalid argument: " << e.what() << std::endl;
+    }
+    catch (const std::runtime_error &e) {
+        std::cout << "runtime error: " << e.what() << std::endl;
+    }
+    catch (const std::exception &e) {
+        std::cout << "general error: " << e.what() << std::endl;
+    }
+    
+    std::cout << "test 3\n";
+    
+    int num = 1;
+    std::cout << "total: " << num1 + 3 << std::endl;
+    
+    return (0);
+}
+```
+
+
 ## c_str Nedir?
 
 Bir string sınıfının içerdiği karakter dizisini C-style string (null-terminated string) formatına dönüştüren bir fonksiyondur. Bu fonksiyon, C++'taki std::string sınıfının bir üye fonksiyonudur.
@@ -71,4 +123,3 @@ int main() {
 ```
 
 c_str fonksiyonunun döndürdüğü pointer, std::string nesnesi hayatta olduğu sürece geçerli olur.
-
