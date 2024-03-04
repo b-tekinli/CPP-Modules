@@ -1,45 +1,59 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
-	: AForm("Shrubbery Creation Form", 145, 137), target(target) {}
-
-ShrubberyCreationForm::~ShrubberyCreationForm() {}
-
-void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
+ShrubberyCreationForm::ShrubberyCreationForm()
 {
-	if (!isSigned())
-		throw AForm::GradeTooLow();
+    cout << "Shrubbery default constructor" << endl;
+}
 
-	if (executor.getGrade() > getExecuteGrade())
-		throw AForm::GradeTooLow();
+ShrubberyCreationForm::ShrubberyCreationForm(const string &tar) : AForm("Shrubbery Creation Form", 145, 137), target(tar)
+{
+}
 
-	std::string str = target + "_shrubbery";
-	std::ofstream outputFile(str.c_str());
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm("Shrubbery Creation Form", 145, 137)
+{
+    *this = obj;
+}
 
-	if (outputFile)
-	{
-		outputFile << "                    \\\n"
-					  "          |         |\n"
-					  "          |       \\ /\\ \n"
-					  "   _ .     \\   „;=`y   .   |\n"
-					  " .⁻⁻> \\«  ` |  `: /”» '   /\\ \n"
-					  ". ,/ `\\;`.  `=„\\`/; „='  ”.='    |\n"
-					  " '   , =\\;` /, =”;„  ==./--=.”» /\n"
-					  "    '     \\\\`v  8/,”-./ ``  ,-`/--'\n"
-					  "           \\\\\\|//  ` v__,=”   \\ \n"
-					  "            \\\\y¡' _,/,<='      \n"
-					  "             \\8|y',-'  ``\\ \n"
-					  "             |{ o/\\\n"
-					  "             |) |\n"
-					  "             |; |\n"
-					  "             |; |\n"
-					  "            „{) o\\ \n"
-				   << std::endl;
-		outputFile.close();
-		std::cout << "Shrubbery created for " << target << "." << std::endl;
-	}
-	else
-	{
-		throw std::runtime_error("Failed to create shrubbery file for " + target + ".");
-	}
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &obj)
+{
+    this->target = obj.target;
+    return *this;
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
+}
+
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+{
+    if (!getIsSigned())
+    {
+        throw AForm::GradeTooLowException();
+    }
+
+    if (executor.getGrade() > getGradeToExecute())
+        throw AForm::GradeTooLowException();
+
+    string str = target + "_shrubbery";
+    std::ofstream outputFile(str.c_str());
+
+    if (outputFile.is_open())
+    {
+        outputFile << "          &&& &&  & &&\n";
+        outputFile << "      && &//&||& ()|/ @, &&\n";
+        outputFile << "      &//(/&/&||/& /_/)_&/_&\n";
+        outputFile << "   &() &//&|()|/&/// '%' & ()\n";
+        outputFile << "  &_/_&&_/ |& |&&/&__%_/_& &&\n";
+        outputFile << "&&   && & &| &| /& & % ()& /&&\n";
+        outputFile << " ()&_---()&/&/|&&-&&--%---()~\n";
+        outputFile << "     &&     /|||\n";
+        outputFile << "             |||\n";
+        outputFile << "             |||\n";
+        outputFile << "             |||\n";
+        outputFile << "       , -=-~  .-^- _\n";
+        outputFile.close();
+        cout << "Shrubbery created for " << target << "." << endl;
+    }
+    else
+        cout << "Errorrr" << endl;
 }

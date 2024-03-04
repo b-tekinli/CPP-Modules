@@ -1,24 +1,23 @@
-#ifndef INTERN_HPP
-#define INTERN_HPP
+#pragma once
 
 #include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 class Intern
 {
+
 public:
-	Intern();
-	~Intern();
+    Intern();
+    Intern(const Intern &obj);
+    Intern &operator=(const Intern &obj);
+    ~Intern();
 
-	AForm *makeForm(const std::string &formName, const std::string &formTarget) const;
-
-	class InvalidAForm : public std::exception
-	{
-	public:
-		virtual const char *what() const throw()
-		{
-			return "Invalid AForm type";
-		}
-	};
+    AForm *makeForm(const string &formName, const string &formTarget);
+    class InvalidArgument : public std::exception
+    {
+    public:
+        virtual const char *what() const throw();
+    };
 };
-
-#endif

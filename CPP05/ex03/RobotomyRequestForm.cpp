@@ -1,23 +1,44 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
-	: AForm("Robotomy Request Form", 72, 45), target(target) {}
-
-RobotomyRequestForm::~RobotomyRequestForm() {}
-
-void RobotomyRequestForm::execute(const Bureaucrat &executor) const
+RobotomyRequestForm::RobotomyRequestForm()
 {
-	if (!isSigned())
-		throw AForm::GradeTooLow();
+    cout << "default constructor called" << endl;
+}
 
-	if (executor.getGrade() > getExecuteGrade())
-		throw AForm::GradeTooLow();
+RobotomyRequestForm::RobotomyRequestForm(const string &tar) : AForm("Robotmy Request Form", 72, 45), target(tar)
+{
+}
 
-	std::cout << "Drilling noises..." << std::endl;
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm("Robotmy Request Form", 72, 45)
+{
+    *this = obj;
+}
 
-	srand(time(0));
-	if (time(NULL) % 2 == 0)
-		std::cout << target << " has been robotomized successfully." << std::endl;
-	else
-		std::cout << "Robotomy failed for " << target << "." << std::endl;
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &obj)
+{
+    *this = obj;
+    return *this;
+}
+
+RobotomyRequestForm::~RobotomyRequestForm()
+{
+}
+
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
+{
+
+    if (!getIsSigned())
+        throw AForm::GradeTooLowException();
+
+    if (executor.getGrade() > getGradeToExecute())
+        throw AForm::GradeTooLowException();
+
+    cout << "Some drilling noises" << endl;
+
+    srand(time(0));
+
+    if (rand() % 2 == 0)
+        cout << target << " has been robotomized successfully." << endl;
+    else
+        cout << "Robotomy on " << target << " has failed." << endl;
 }

@@ -1,39 +1,60 @@
 #include "Intern.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
 
-Intern::Intern() {}
-
-Intern::~Intern() {}
-
-AForm *Intern::makeForm(const std::string &AFormName, const std::string &target) const
+Intern::Intern()
 {
-	std::string AFormNames[3] = {
-		"shrubbery",
-		"robotomy",
-		"presidential"};
+}
 
-	int i = 0;
-	while (i < 3 && AFormNames[i] != AFormName)
-		i++;
-	AForm *tmp = NULL;
+Intern::Intern(const Intern &obj)
+{
+    *this = obj;
+}
+Intern &Intern::operator=(const Intern &obj)
+{
+    *this = obj;
+    return *this;
+}
 
-	switch (i)
-	{
-	case 0:
-		tmp = new ShrubberyCreationForm(target);
-		break;
-	case 1:
-		tmp = new RobotomyRequestForm(target);
-		break;
-	case 2:
-		tmp = new PresidentialPardonForm(target);
-		break;
-	default:
-		throw Intern::InvalidAForm();
-	}
-	std::cout << "Intern creates " << AFormName << std::endl;
+Intern::~Intern()
+{
+}
 
-	return (tmp);
+const char *Intern::InvalidArgument::what() const throw()
+{
+    return "Invalid argument !\n";
+}
+
+AForm *Intern::makeForm(const string &formName, const string &formTarget)
+{
+    string names[3] = {
+        "shrubbery creation",
+        "robotomy request",
+        "presidential pardon"};
+
+    int i = 0;
+    while (i < 3)
+    {
+        if (names[i] == formName)
+            break;
+        i++;
+    }
+
+    AForm *tmp = NULL;
+
+    switch (i)
+    {
+    case 0:
+        tmp = new ShrubberyCreationForm(formTarget);
+        break;
+    case 1:
+        tmp = new RobotomyRequestForm(formTarget);
+        break;
+    case 2:
+        tmp = new PresidentialPardonForm(formTarget);
+        break;
+    default:
+        throw Intern::InvalidArgument();
+        break;
+    }
+    cout << "Intern creates " << tmp->getName() << endl;
+    return tmp;
 }
