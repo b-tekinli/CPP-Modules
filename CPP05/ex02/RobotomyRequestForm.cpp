@@ -5,11 +5,11 @@ RobotomyRequestForm::RobotomyRequestForm()
     cout << "default constructor called" << endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const string &tar) : AForm("Robotmy Request Form", 72, 45), target(tar)
+RobotomyRequestForm::RobotomyRequestForm(const string &tar) : AForm("Robotomy Request Form", 72, 45), target(tar)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm("Robotmy Request Form", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) : AForm("Robotomy Request Form", 72, 45)
 {
     *this = obj;
 }
