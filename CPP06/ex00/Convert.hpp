@@ -1,6 +1,5 @@
 #include <string>
 #include <iostream>
-#include <cstdlib>
 #include <cmath>
 
 class ScalarConverter
