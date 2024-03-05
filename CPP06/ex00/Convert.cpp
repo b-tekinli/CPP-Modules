@@ -12,6 +12,10 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter &other) {
     return *this;
 }
 
+bool ScalarConverter::isDisplayableChar(int value) {
+    return (value >= 32 && value <= 126);
+}
+
 void ScalarConverter::convert(const std::string &input) {
     try {
         int intValue = std::stoi(input);
@@ -74,8 +78,4 @@ double ScalarConverter::toDouble(double value) {
         return value > 0 ? INFINITY : -INFINITY;
     }
     return value;
-}
-
-bool ScalarConverter::isDisplayableChar(int value) {
-    return (value >= 32 && value <= 126);
 }
