@@ -7,11 +7,13 @@ int main() {
 
     t_data* deserializedData = deserialize(serializedPtr);
 
+    std::cout << "test: " << deserializedData << "\n";
+
     if (originalData == deserializedData) {
         std::cout << "Serialization and deserialization successful." << std::endl;
         std::cout << "Username: " << deserializedData->username << "\nAge: " << deserializedData->age
                   << "\nLevel: " << deserializedData->level << std::endl;
-        std::cout << "ptr address: " << serializedPtr << std::endl;
+        std::cout << "ptr address: " << deserializedData << std::endl;
     } else {
         std::cout << "Serialization and deserialization failed." << std::endl;
     }
