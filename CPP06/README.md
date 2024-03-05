@@ -29,7 +29,7 @@ int main ()
 }
 ```
 
-Yukarıdaki örnekte `double` veri tipindeki bir değişkeni `int` veri tipine dönüştürdük. Tam tersini de yapmak mümkün.
+Yukarıdaki örnekte `double` veri tipindeki bir değişkeni `int` veri tipine dönüştürdük. Tam tersini yapmak pek mümkün değil çünkü static_cast tam sayı değerleri için otomatik dönüştürme yapıyor ve bu yüzden ondalık kısmı koruyamıyor.
 
 
 <br />
