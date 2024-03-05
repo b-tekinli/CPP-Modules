@@ -8,10 +8,10 @@ class ScalarConverter
 private:
     ScalarConverter();
     ScalarConverter(const ScalarConverter &other);
+    ScalarConverter &operator=(const ScalarConverter &other);
     ~ScalarConverter();
 
 public:
-    ScalarConverter &operator=(const ScalarConverter &other);
 
     static bool isDisplayableChar(int value);
     static void convert(const std::string &input);

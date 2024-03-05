@@ -50,11 +50,13 @@ void identify(Base &p)
 int main()
 {
     srand(time(0));
+
     for (int i = 0; i < 10; ++i)
     {
         Base *p = generate();
         identify(p);
         identify(*p);
+
         delete p;
     }
     return 0;
