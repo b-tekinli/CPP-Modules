@@ -5,17 +5,17 @@
 
 class ScalarConverter
 {
-public:
+private:
     ScalarConverter();
-    ~ScalarConverter();
     ScalarConverter(const ScalarConverter &other);
+    ~ScalarConverter();
+
+public:
     ScalarConverter &operator=(const ScalarConverter &other);
 
     static bool isDisplayableChar(int value);
-
     static void convert(const std::string &input);
 
-private:
     static char toChar(int value);
     static int toInt(int value);
     static float toFloat(float value);

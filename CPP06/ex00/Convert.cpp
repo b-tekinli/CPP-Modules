@@ -44,6 +44,7 @@ void ScalarConverter::convert(const std::string &input) {
 
 char ScalarConverter::toChar(int value) {
     char c = static_cast<char>(value);
+
     if (!isDisplayableChar(c)) {
         std::cout << "char: Non displayable\n";
     } else {
