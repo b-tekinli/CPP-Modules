@@ -35,7 +35,7 @@ Yukarıdaki örnekte `double` veri tipindeki bir değişkeni `int` veri tipine d
 <br />
 
 
-- `dynamic_cast`: Genellikle polimorfik sınıflar ve dinamik tür belirleme amacıyla kullanılır. Bir üst sınıfın bir alt sınıfa güvenli bir şekilde dönüştürülmesinde kullanılır. Run time'da tip kontrolü yapar ve uygun olmayan dönüşümlerde nullptr döner.
+- `dynamic_cast`: Genellikle polimorfik sınıflar (bu yüzden virtual olmak zorundadır) ve dinamik tür belirleme amacıyla kullanılır. Bir üst sınıfın bir alt sınıfa güvenli bir şekilde dönüştürülmesinde ve tam tersi işlemde kullanılır. Run time'da tip kontrolü yapar ve uygun olmayan dönüşümlerde nullptr döner.
 
 ```cpp
 #include <iostream>
@@ -205,4 +205,3 @@ Bu modül özelinde `uintptr_t` yapısı kullanılıyor ve bu da herhangi bir `(
 `serialize()` fonksiyonu, **t_data** pointer'ını **uintptr_t** türüne dönüştürür. Bu, pointer'ın hafızadaki konumunu bir int değeri olarak saklar.
 
 `deserialize()` fonksiyonu ise tam tersini yapar. Bir **uintptr_t** değerini alır ve bu değeri **t_data** pointer'ına dönüştürür.
-
