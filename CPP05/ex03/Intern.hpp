@@ -15,6 +15,7 @@ public:
     ~Intern();
 
     AForm *makeForm(const string &formName, const string &formTarget);
+    
     class InvalidArgument : public std::exception
     {
     public:

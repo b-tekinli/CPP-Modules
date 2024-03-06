@@ -53,5 +53,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         cout << "Shrubbery created for " << target << "." << endl;
     }
     else
-        cout << "Errorrr" << endl;
+        cout << "Error" << endl;
 }

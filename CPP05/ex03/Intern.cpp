@@ -55,6 +55,8 @@ AForm *Intern::makeForm(const string &formName, const string &formTarget)
         throw Intern::InvalidArgument();
         break;
     }
+
     cout << "Intern creates " << tmp->getName() << endl;
+    
     return tmp;
 }
