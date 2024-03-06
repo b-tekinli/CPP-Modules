@@ -24,7 +24,8 @@ T min(T&a, T &b) {
     return a < b ? a : b;
 }
 
-int main() {
+int main() 
+{
     int x = 3;
     int y = 2;
     
@@ -37,17 +38,19 @@ int main() {
     std::string name = "beyza";
     std::string surname = "tekinli";
     
-    std::string q = "test";
-    std::string w = "test0";
+    std::string q = "test1";
+    std::string w = "test2";
     
     std::cout << "min value: " << min(x, y) << "\n";            // 2
     std::cout << "min value: " << min(a, b) << "\n";            // b --> ascii karakter değerine bakar.
     std::cout << "min value: " << min(pi, c) << "\n";           // 3.14
     std::cout << "min value: " << min(name, surname) << "\n";   // beyza --> ascii karakter değerine bakar.
-    std::cout << "min value: " << min(q, w) << "\n";            // test --> ascii karakter değerlerini karşılaştırır.
+    std::cout << "min value: " << min(q, w) << "\n";            // test1 --> ascii karakter değerlerini karşılaştırır.
 
     return 0;
 }
 ```
 
-Mesela burada yazmış olduğum örnekte float pi ve float c değişkenlerinden birini double yapsam bile ikisi de ondalıklı sayı olmasına rağmen T double ya da float arasında kalıp hangi veri tipini alacağını bilemediğinden error alırız. 
+Mesela burada yazmış olduğum örnekte _float pi_ ve _float c_ değişkenlerinden birini double yapsam bile ikisi de ondalıklı sayı olmasına rağmen T double ya da float arasında kalıp hangi veri tipini alacağını bilemediğinden error alırız. Her 2 değişken de aynı veri tipinde olmak zorunda.
+
+
