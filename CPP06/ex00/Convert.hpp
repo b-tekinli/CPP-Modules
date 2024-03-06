@@ -11,7 +11,6 @@ private:
     ~ScalarConverter();
 
 public:
-
     static bool isDisplayableChar(int value);
     static void convert(const std::string &input);
 

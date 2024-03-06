@@ -1,9 +1,20 @@
 #include "Data.hpp"
 
-uintptr_t serialize(t_data* ptr) {
-    return reinterpret_cast<uintptr_t>(ptr);
+Data::Data(){
+	this->name = "";
+	this->surname = "";
 }
 
-t_data* deserialize(uintptr_t raw) {
-    return reinterpret_cast<t_data*>(raw);
+Data::Data(const std::string& name, const std::string&surname): name(name), surname(surname) {}
+
+Data::~Data() {}
+
+Data::Data(const Data& data) {
+	*this = data;
+}
+
+Data& Data::operator=(const Data& data){
+	this->name = data.name;
+	this->surname = data.surname;
+	return *this;
 }

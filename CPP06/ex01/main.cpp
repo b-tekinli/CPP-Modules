@@ -1,24 +1,11 @@
+#include <iostream>
 #include "Data.hpp"
-
-int main() {
-    t_data* originalData = new t_data{"btekinli", 24, 7.14};
-
-    uintptr_t serializedPtr = serialize(originalData);
-
-    t_data* deserializedData = deserialize(serializedPtr);
-
-    std::cout << "test: " << deserializedData << "\n";
-
-    if (originalData == deserializedData) {
-        std::cout << "Serialization and deserialization successful." << std::endl;
-        std::cout << "Username: " << deserializedData->username << "\nAge: " << deserializedData->age
-                  << "\nLevel: " << deserializedData->level << std::endl;
-        std::cout << "ptr address: " << deserializedData << std::endl;
-    } else {
-        std::cout << "Serialization and deserialization failed." << std::endl;
-    }
-
-    delete originalData;
-
-    return 0;
+#include "Serializer.hpp"
+int main(){
+	Data *data = new Data("Beyza", "Tekinli");
+	uintptr_t ptr =  Serializer::serialize(data);
+	std::cout << "Address: " << ptr << std::endl;
+	Data *converted = Serializer::deserialize(ptr);
+	std::cout << "Name: " << converted->name << std::endl << "Surname: " << converted->surname << std::endl;
+	delete converted;
 }
