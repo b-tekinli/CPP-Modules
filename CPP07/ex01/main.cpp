@@ -1,14 +1,13 @@
 #include "iter.hpp"
-#include <iostream>
 
-
-int main(void)
+int main()
 {
-	char name[7] = "beyzat";
-	iter(name, 7, print);
+	char name[6] = "beyza";
+	iter(name, 6, print);
 
-	std::cout << std::endl;
 
-	int arr[5] = {5, 12, 4, 8, 10};
+	int arr[5] = {1, 12, 4, 7, 5};
 	iter(arr, 5, print);
+
+	return (0);
 }
