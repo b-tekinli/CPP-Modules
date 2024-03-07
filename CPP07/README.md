@@ -53,7 +53,7 @@ int main()
 
 Mesela burada yazmış olduğum örnekte _float pi_ ve _float c_ değişkenlerinden birini double yapsam bile ikisi de ondalıklı sayı olmasına rağmen T, double ve float arasında kalıp hangi veri tipini alacağını bilemediğinden error alırız. Her 2 değişken de aynı veri tipinde olmak zorunda.
 
-Aynı zamanda main fonksiyonu içinde çağırırken **::min()** şeklinde başına **::** vererek çağırıyoruz. Neden _std_ vermiyoruz diyebilirsiniz. Bunun sebebi ise şu global namespace ya da başka herhangi bir yerde min ya da maks gibi fonksiyonlar illaki bulunuyor. Bu yüzden onlarla karışmasın diye kendi template'imiz olduğunu başına **::** vererek belirtiyoruz. Zaten başına _std_ verirsek **char** veri tipinde bir şey döndüreceğim demiş oluyoruz ama buradaki amacımız herhangi bir veri tipi belirtmeden istediğimiz an istediğimiz veri tipi ile çağırabilmek olduğundan yanlış bir kullanım olur.
+Aynı zamanda main fonksiyonu içinde çağırırken **::min()** şeklinde başına **::** vererek çağırıyoruz. Neden _std_ vermiyoruz diyebilirsiniz. Bunun sebebi ise şu global namespace ya da başka herhangi bir yerde min ya da maks gibi fonksiyonlar illaki bulunuyor. Bu yüzden onlarla karışmasın diye kendi template'imiz olduğunu başına **::** vererek belirtiyoruz.
 
 Aşağıya daha fazla örnek bırakıyorum.
 
@@ -106,3 +106,28 @@ int main() {
 ## Iteratör nedir?
 
 Bir containerın (CPP08'de daha ayrıntılı açıklayacağım) içindeki elemanlara erişmeyi sağlar. Nasıl bir dizi içindeki elemanlara erişmek için genelde _i_ değişkeni oluşturup kullanıyoruz aslında buradaki i == iterator oluyor. ex01 dosyasında iter örneği var zaten.
+
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> v = {1, 2, 3, 4, 5};
+    
+    auto it = v.begin();
+    
+    cout << v[2] << "\n";
+    
+    cout << *it << "\n";
+    
+    it++;
+    
+    cout << *it << "\n";
+    
+    for (auto it = v.begin(); it != v.end(); it++) {
+        cout << *it << "\n";
+    }
+}
+```
