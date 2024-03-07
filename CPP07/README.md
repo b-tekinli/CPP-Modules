@@ -55,31 +55,54 @@ Mesela burada yazmış olduğum örnekte _float pi_ ve _float c_ değişkenlerin
 
 Aynı zamanda main fonksiyonu içinde çağırırken **::min()** şeklinde başına **::** vererek çağırıyoruz. Neden _std_ vermiyoruz diyebilirsiniz. Bunun sebebi ise şu global namespace ya da başka herhangi bir yerde min ya da maks gibi fonksiyonlar illaki bulunuyor. Bu yüzden onlarla karışmasın diye kendi template'imiz olduğunu başına **::** vererek belirtiyoruz. Zaten başına _std_ verirsek **char** veri tipinde bir şey döndüreceğim demiş oluyoruz ama buradaki amacımız herhangi bir veri tipi belirtmeden istediğimiz an istediğimiz veri tipi ile çağırabilmek olduğundan yanlış bir kullanım olur.
 
-## Iteratör nedir?
-
-Bir container (CPP08'de daha ayrıntılı açıklayacağım) içindeki elemanlara erişmeyi sağlar. Nasıl bir dizi içindeki elemanlara erişmek için genelde _i_ değişkeni oluşturup kullanıyoruz aslında buradaki i == iterator oluyor. 
+Aşağıya daha fazla örnek bırakıyorum.
 
 ```cpp
 #include <iostream>
-#include <vector>
+#include <string>
 
 using namespace std;
 
-int main() {
-    vector<int> v = {1, 2, 3, 4, 5};
-    
-    auto it = v.begin();
-    
-    cout << v[2] << "\n";
-    
-    cout << *it << "\n";
-    
-    it++;
-    
-    cout << *it << "\n";
-    
-    for (auto it = v.begin(); it != v.end(); it++) {
-        cout << *it << "\n";
+// arraydeki tüm elemanların karesini al
+template <typename T>
+T square(T* arr, T len) {
+    for (int i = 0; i < len; i++)
+    {
+        cout << arr[i] * arr[i] << "\n";
     }
 }
+
+// stringin ilk harfini büyük yap
+template <typename T>
+void toUpperCaseFirst(T& str) {
+    str[0] = toupper(str[0]);
+}
+
+// stringin tüm harflerini büyük yap
+template <typename T>
+void toUpperCase(T& str) {
+    for(int i = 0; i < str.length(); i++) {
+        str[i] = toupper(str[i]);       
+    }
+}
+
+int main() {
+    int arr[3] = {2, 3, 4};
+
+    ::square(arr, 3);
+
+    string name = "beyza";
+    ::toUpperCaseFirst(name);
+
+    cout << name << "\n";
+
+    ::toUpperCase(name);
+    cout << name << "\n";
+
+    return (0);
+}
 ```
+
+## Iteratör nedir?
+
+Bir containerın (CPP08'de daha ayrıntılı açıklayacağım) içindeki elemanlara erişmeyi sağlar. Nasıl bir dizi içindeki elemanlara erişmek için genelde _i_ değişkeni oluşturup kullanıyoruz aslında buradaki i == iterator oluyor. ex01 dosyasında iter örneği var zaten.
