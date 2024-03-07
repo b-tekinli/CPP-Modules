@@ -41,16 +41,16 @@ int main()
     std::string q = "test1";
     std::string w = "test2";
     
-    std::cout << "min value: " << min(x, y) << "\n";            // 2
-    std::cout << "min value: " << min(a, b) << "\n";            // b --> ascii karakter değerine bakar.
-    std::cout << "min value: " << min(pi, c) << "\n";           // 3.14
-    std::cout << "min value: " << min(name, surname) << "\n";   // beyza --> ascii karakter değerine bakar.
-    std::cout << "min value: " << min(q, w) << "\n";            // test1 --> ascii karakter değerlerini karşılaştırır.
+    std::cout << "min value: " << ::min(x, y) << "\n";            // 2
+    std::cout << "min value: " << ::min(a, b) << "\n";            // b --> ascii karakter değerine bakar.
+    std::cout << "min value: " << ::min(pi, c) << "\n";           // 3.14
+    std::cout << "min value: " << ::min(name, surname) << "\n";   // beyza --> ascii karakter değerine bakar.
+    std::cout << "min value: " << ::min(q, w) << "\n";            // test1 --> ascii karakter değerlerini karşılaştırır.
 
     return 0;
 }
 ```
 
-Mesela burada yazmış olduğum örnekte _float pi_ ve _float c_ değişkenlerinden birini double yapsam bile ikisi de ondalıklı sayı olmasına rağmen T double ya da float arasında kalıp hangi veri tipini alacağını bilemediğinden error alırız. Her 2 değişken de aynı veri tipinde olmak zorunda.
+Mesela burada yazmış olduğum örnekte _float pi_ ve _float c_ değişkenlerinden birini double yapsam bile ikisi de ondalıklı sayı olmasına rağmen T, double ve float arasında kalıp hangi veri tipini alacağını bilemediğinden error alırız. Her 2 değişken de aynı veri tipinde olmak zorunda.
 
-
+Aynı zamanda main fonksiyonu içinde çağırırken **::min()** şeklinde başına **::** vererek çağırıyoruz. Neden _std_ vermiyoruz diyebilirsiniz. Bunun sebebi ise şu global namespace ya da başka herhangi bir yerde min ya da maks gibi fonksiyonlar illaki bulunuyor. Bu yüzden onlarla karışmasın diye kendi template'imiz olduğunu başına **::** vererek belirtiyoruz. Zaten başına _std_ verirsek **char** veri tipinde bir şey döndüreceğim demiş oluyoruz ama buradaki amacımız herhangi bir veri tipi belirtmeden istediğimiz an istediğimiz veri tipi ile çağırabilmek olduğundan yanlış bir kullanım olur.
