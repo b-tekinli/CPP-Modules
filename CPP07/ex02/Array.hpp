@@ -2,6 +2,7 @@
 #define ARRAY_HPP
 
 #include <iostream>
+#include <cstdlib>
 
 template <typename T>
 class Array
@@ -41,7 +42,7 @@ public:
             if (array)
                 delete[] array;
 
-            _size = other._size;
+            _size = other.size();
             array = new T[_size];
 
             for (unsigned int i = 0; i < _size; i++)
