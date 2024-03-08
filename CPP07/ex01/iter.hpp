@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-template <typename T>
-void iter(T *address, std::size_t len, void (*func)(T))
+template <typename T, typename F>
+void iter(T *address, std::size_t len, F func)
 {
 	std::size_t i = 0;
 	while (i < len)
@@ -12,12 +12,6 @@ void iter(T *address, std::size_t len, void (*func)(T))
 		func(address[i]);
 		i++;
 	}
-}
-
-template <typename T>
-void print(T t)
-{
-	std::cout << t << "\n";
 }
 
 #endif
