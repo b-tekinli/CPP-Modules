@@ -102,32 +102,3 @@ int main() {
     return (0);
 }
 ```
-
-## Iteratör nedir?
-
-Bir containerın (CPP08'de daha ayrıntılı açıklayacağım) içindeki elemanlara erişmeyi sağlar. Nasıl bir dizi içindeki elemanlara erişmek için genelde _i_ değişkeni oluşturup kullanıyoruz aslında buradaki i == iterator oluyor. ex01 dosyasında iter örneği var zaten.
-
-```cpp
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-int main() {
-    vector<int> v = {1, 2, 3, 4, 5};
-    
-    auto it = v.begin();
-    
-    cout << v[2] << "\n";
-    
-    cout << *it << "\n";
-    
-    it++;
-    
-    cout << *it << "\n";
-    
-    for (auto it = v.begin(); it != v.end(); it++) {
-        cout << *it << "\n";
-    }
-}
-```
