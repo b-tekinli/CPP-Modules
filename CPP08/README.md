@@ -102,3 +102,5 @@ int main()
     return 0;
 }
 ```
+
+Burada da stack kullanımını gördük. Stack kullanırken bir dizi oluşturmuyoruz ve içine tek tek değer atabiliyoruz. Burada ulaşabildiğimiz tek eleman en son giren yani en üstteki eleman oluyor. Bunu da _top()_ fonksiyonu ile alabiliyoruz. _empty()_ fonksiyonu ise içinin boş olup olmadığını kontrol ediyor. _pop()_ fonksiyonu ise stack'ten en son eklenen elemanı çıkartıyor.
