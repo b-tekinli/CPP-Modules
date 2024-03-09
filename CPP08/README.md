@@ -22,7 +22,7 @@ Vector, list, map, queue, stack gibi birçok container vardır. Neden bu kadar �
 using namespace std;
 
 int main() {
-    vector<int> v = {1, 2, 3, 4, 5};
+    vector<int> v = { 12, 2, 36, 42, 51 };;
     
     auto it = v.begin();
     
@@ -40,4 +40,31 @@ int main() {
 }
 ```
 
-Buradaki kodda örnek bir kullanım var. 
+Yukarıdaki kodda örnek bir vector kullanımı var. Buna ek olarak list ve stack kullanımlarına da bakalım. Önce list kullanımına bakalım.
+
+```cpp
+int main() 
+{
+    list<int> myList = { 12, 2, 36, 42, 51 };
+    
+    auto it = myList.begin();
+    
+    cout << "3. eleman: " << *(++(++it)) << "\n";
+    
+    cout << "su anda gosterdigi yer: " << *myList.begin() << "\n";
+    
+    advance(it, 2);
+    
+    cout << "simdi de burayi gosteriyor: " << *it << "\n";
+
+
+    for(auto it = myList.begin(); it != myList.end(); it++) {
+        cout << "eleman degeri: " << *it << "\n";
+    }
+    
+    
+    return 0;
+}
+```
+
+Aslında list, vector ile hemen hemen aynı fonksiyonlara sahip sadece random access olmadığından [] (subscript) operatörü ile erişemiyoruz. Buna ek olarak da _advance()_ fonksiyonu için konuşacak olursak, 2 parametre alır. İlk aldığı parametre iteratör, 2. aldığı parametre ise iteratörü kaç adım ilerletmek istediğimiz sayıdır. 3. elemanı yazdırdığımız satırda 3. elemana kadar ilerletmiş olduğumuzdan advance fonksiyonu içinde 2. parametreyi 2 verirsek 2 adım ilerletir ve 51 değerini yazdırmış oluruz.
