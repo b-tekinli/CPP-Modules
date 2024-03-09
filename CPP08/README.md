@@ -43,6 +43,11 @@ int main() {
 Yukarıdaki kodda örnek bir vector kullanımı var. Buna ek olarak list ve stack kullanımlarına da bakalım. Önce list kullanımına bakalım.
 
 ```cpp
+#include <iostream>
+#include <list>
+
+using namespace std;
+
 int main() 
 {
     list<int> myList = { 12, 2, 36, 42, 51 };
@@ -68,3 +73,32 @@ int main()
 ```
 
 Aslında list, vector ile hemen hemen aynı fonksiyonlara sahip sadece random access olmadığından [] (subscript) operatörü ile erişemiyoruz. Buna ek olarak da _advance()_ fonksiyonu için konuşacak olursak, 2 parametre alır. İlk aldığı parametre iteratör, 2. aldığı parametre ise iteratörü kaç adım ilerletmek istediğimiz sayıdır. 3. elemanı yazdırdığımız satırda 3. elemana kadar ilerletmiş olduğumuzdan advance fonksiyonu içinde 2. parametreyi 2 verirsek 2 adım ilerletir ve 51 değerini yazdırmış oluruz.
+
+Şimdi de stack kullanımını görelim.
+
+```cpp
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main() 
+{
+    stack<int> myStack;
+
+    myStack.push(15);
+    myStack.push(20);
+    myStack.push(25);
+    myStack.push(42);
+    
+    cout << "en ussteki eleman: " << myStack.top() << "\n";
+    
+    while (!myStack.empty()) {
+        cout << "cikartilan eleman: " << myStack.top() << "\n";
+        myStack.pop();
+    }
+    
+    
+    return 0;
+}
+```
