@@ -1,24 +1,39 @@
-#ifndef BITCOINEXCHANGE_HPP
-#define BITCOINEXCHANGE_HPP
+#ifndef BTC_H
+#define BTC_H
 
-#include <iostream>
-#include <exception>
 #include <fstream>
+#include <iostream>
 #include <map>
+#include <string>
+#include <sstream>
+#include <cstdlib>
+#include <iomanip>
+#include <cstdio>
 
 class BitcoinExchange
 {
 private:
-    BitcoinExchange();
-    std::map<std::string, float> _data;
+    struct
+    {
+        float value;
+        std::string date;
+    } sData;
+
+    std::map<std::string, float> btcData;
 
 public:
-    BitcoinExchange(int ac, char **av);
+    BitcoinExchange();
+    BitcoinExchange(const BitcoinExchange &other);
+    BitcoinExchange &operator=(const BitcoinExchange &other);
     ~BitcoinExchange();
-    std::string getKeyAtIndex(int index);
-    float getValueAtIndex(int index);
-    BitcoinExchange(BitcoinExchange &obj);
-    BitcoinExchange &operator=(BitcoinExchange &obj);
+
+    void fillData(std::string string);
+    void handleInputFile(std::string fileName);
+    void checkValues(float value);
+    void checkDate(int year, int month, int day);
+    void findDateAndCalculate();
+    void printMap();
+    int isLeap(int year);
 };
 
 #endif

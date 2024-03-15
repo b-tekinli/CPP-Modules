@@ -1,7 +1,22 @@
 #include "BitcoinExchange.hpp"
 
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
-    BitcoinExchange a(ac, av);
-    return (0);
+    if (argc < 2)
+    {
+        std::cout << "Error: could not open file." << std::endl;
+        return (1);
+    }
+    try
+    {
+        if (argc > 2)
+            throw(std::string)("too many args");
+            
+        BitcoinExchange bitcoin;
+        bitcoin.handleInputFile(argv[1]);
+    }
+    catch (std::string error)
+    {
+        std::cout << "Error : " << error << std::endl;
+    }
 }
